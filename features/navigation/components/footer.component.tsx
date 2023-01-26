@@ -9,8 +9,12 @@ import { Email, Home } from "@mui/icons-material";
 import { config } from "../../../configs/config";
 
 export const FooterComponent: React.FC = () => {
-  const { profile } = useFirebase();
+  const { profile, isLoading } = useFirebase();
   const t = useTranslations("general");
+  if (isLoading) {
+    return <></>;
+  }
+
   return (
     <footer>
       <Box
@@ -27,24 +31,24 @@ export const FooterComponent: React.FC = () => {
           </Typography>
           <Typography>{profile?.description}</Typography>
           <Box display="flex">
-          {profile?.email && (
-            <Chip
-              icon={<Email />}
-              label={profile?.email}
-              size="small"
-              variant="medium"
-            />
-          )}
-          {config?.siteUrl && (
-            <Box className="show-print">
+            {profile?.email && (
               <Chip
-                icon={<Home />}
-                label={config.siteUrl}
+                icon={<Email />}
+                label={profile?.email}
                 size="small"
                 variant="medium"
               />
-            </Box>
-          )}
+            )}
+            {config?.siteUrl && (
+              <Box className="show-print">
+                <Chip
+                  icon={<Home />}
+                  label={config.siteUrl}
+                  size="small"
+                  variant="medium"
+                />
+              </Box>
+            )}
           </Box>
         </Container>
       </Box>

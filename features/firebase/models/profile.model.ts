@@ -44,6 +44,8 @@ export type ProfileResponse = {
   firstName: string;
   lastName: string;
   nickName?: string;
+  phone: string;
+  nameTitle: string;
   title: string;
   location?: string;
   yearOfBirth?: number;
