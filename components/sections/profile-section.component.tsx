@@ -1,4 +1,11 @@
-import { Business, DateRange, Email, Home, Print } from "@mui/icons-material";
+import {
+  Business,
+  DateRange,
+  Email,
+  Home,
+  Phone,
+  Print,
+} from "@mui/icons-material";
 import { Box, Avatar, Typography, Chip, Button } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { config } from "../../configs/config";
@@ -30,10 +37,15 @@ export const ProfileSectionComponent: React.FC = () => {
           sx={{ width: 180, height: 180 }}
         />
         <Box sx={{ marginLeft: 2, flex: 1 }}>
-          <Typography component="h1" variant="h1">
-            {profile?.firstName} {profile?.lastName}
-          </Typography>
-          <Typography variant="h3" color="secondary.dark">
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography component="h1" variant="h1">
+              {profile?.firstName} {profile?.lastName}
+            </Typography>
+            <Typography variant="h3" color="secondary.dark" pl={1} pt={1}>
+              {profile?.nameTitle}
+            </Typography>
+          </Box>
+          <Typography variant="h3" color="primary.dark">
             {profile?.title}
           </Typography>
           <Typography>{profile?.description}</Typography>
@@ -60,6 +72,15 @@ export const ProfileSectionComponent: React.FC = () => {
               <Chip
                 icon={<Email />}
                 label={profile?.email}
+                size="small"
+                variant="medium"
+                color="primary"
+              />
+            )}
+            {profile?.phone && (
+              <Chip
+                icon={<Phone />}
+                label={profile?.phone}
                 size="small"
                 variant="medium"
                 color="primary"
