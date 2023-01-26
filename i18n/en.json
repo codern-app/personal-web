@@ -1,7 +1,34 @@
 {
+  "general": {
+    "pages": "Sections",
+    "external": "External links",
+    "social": "Socials",
+    "pageSource": "View source of this page",
+    "googlePlay": "My applications on Google Play"
+  },
+  "education": {
+    "title": "Education"
+  },
   "experience": {
-    "title": "Experience",
-    "show_more": "Show more",
-    "show_less": "Show less"
+    "title": "Experience"
+  },
+  "highlight": {
+    "title": "Highlights"
+  },
+  "languages": {
+    "title": "Languages"
+  },
+  "portfolio": {
+    "title": "Portfolio"
+  },
+  "profile": {
+    "title": "Profile",
+    "print": "Print"
+  },
+  "publication": {
+    "title": "Publications"
+  },
+  "skills": {
+    "title": "Skills"
   }
 }
