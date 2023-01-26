@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import { ReactNode, useState } from "react";
 import { SideMenuComponent } from "./side-menu.component";
 import { HeaderComponent } from "./header.component";
+import { FooterComponent } from "./footer.component";
 
 type Props = {
   children: ReactNode;
@@ -13,7 +14,8 @@ export const WrapperComponent: React.FC<Props> = ({ children }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <HeaderComponent setIsSideBarOpen={setIsSideBarOpen} />
-      <Container>{children}</Container>
+      {children}
+      <FooterComponent />
       <SideMenuComponent isSideBarOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen} />
     </Box>
   );

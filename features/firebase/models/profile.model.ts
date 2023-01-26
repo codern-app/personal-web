@@ -21,6 +21,8 @@ export type Education = {
   university: string;
   image: string;
   duration: string;
+  location: string;
+  topic: string;
 };
 
 export type Footer = {
@@ -29,6 +31,12 @@ export type Footer = {
   googlePlay: string;
   medium: string;
   linkedin: string;
+};
+
+export type Language = {
+  id: string;
+  title: string;
+  level: string;
 };
 
 export type ProfileResponse = {
@@ -48,4 +56,5 @@ export type ProfileResponse = {
   education?: Education[];
   footer?: Footer;
   skills?: TagGroup[];
+  languages?: Language[];
 };

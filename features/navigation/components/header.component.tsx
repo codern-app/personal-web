@@ -17,9 +17,9 @@ type Props = {
 export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
   const router = useRouter();
   return (
-    <header>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+    <header className="hide-print">
+      <Box sx={{ flexGrow: 1, marginBottom: 8 }}>
+        <AppBar position="fixed">
           <Container>
             <Toolbar>
               <IconButton
@@ -38,16 +38,9 @@ export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
                 {config.siteName}
               </Typography>
               {menuConfig.topMenu.map((menuItem) => (
-                <Button
-                  color="inherit"
-                  key={menuItem.title}
-                  onClick={() => {
-                    router.push(menuItem.link);
-                  }}
-                >
+                <IconButton key={menuItem.title} href={menuItem.link}>
                   <menuItem.icon sx={{marginRight: 1}} />
-                  {menuItem.title}
-                </Button>
+                </IconButton>
               ))}
             </Toolbar>
           </Container>

@@ -14,6 +14,7 @@ export type FirebaseState = {
   highlights?: HighlightsResponse;
   portfolios?: PortfoliosResponse;
   profile?: ProfileResponse;
+  isLoading?: boolean;
 };
 
 export type TagGroup = {

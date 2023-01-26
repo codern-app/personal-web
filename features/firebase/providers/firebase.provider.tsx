@@ -21,6 +21,7 @@ const initialState: FirebaseState = {
   highlights: undefined,
   portfolios: undefined,
   profile: undefined,
+  isLoading: true,
 };
 
 export const FirebaseContext = React.createContext<FirebaseState>(initialState);
@@ -40,6 +41,7 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
     [app]
   );
   const analytics = useMemo(() => (app ? getAnalytics(app) : undefined), [app]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [experience, setExperience] = useState<ExperienceResponse>();
   const [highlights, setHighlights] = useState<HighlightsResponse>();
   const [portfolios, setPortfolios] = useState<PortfoliosResponse>();
@@ -59,7 +61,10 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
             JSON.parse(getValue(remoteConfig, "portfolio").asString())
           );
           setProfile(JSON.parse(getValue(remoteConfig, "profile").asString()));
-        } catch (e) {}
+          setIsLoading(false);
+        } catch (e) {
+          setIsLoading(false);
+        }
       });
     }
   }, [remoteConfig]);
@@ -75,6 +80,7 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
         highlights,
         profile,
         portfolios,
+        isLoading,
       }}
     >
       {children}
