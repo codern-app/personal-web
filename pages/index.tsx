@@ -29,7 +29,19 @@ export default function Home() {
     return (
       <WrapperComponent>
         <Head>
-          <title>{config.siteName}</title>
+          <title>
+            {config.siteName} | {config?.userTitle}
+          </title>
+          <meta charSet="utf-8" />
+          <meta name="description" content={config?.userDescription} />
+          <meta
+            property="og:title"
+            content={config.siteName + " | " + config?.userTitle}
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:url" content={config?.siteUrl} />
+          <meta property="og:image" content={config?.userImageUrl} />
         </Head>
         <Box sx={{ display: "flex", justifyContent: "center", marginY: 20 }}>
           <CircularProgress />
@@ -41,7 +53,11 @@ export default function Home() {
   return (
     <WrapperComponent>
       <Head>
-        <title>{config.siteName} | {profile?.title}</title>
+        <title>
+          {config.siteName} | {profile?.title}
+        </title>
+        <meta name="description" content={profile?.description} />
+        <link rel="canonical" href={config.siteUrl} />
       </Head>
       <ProfileSectionComponent />
       <HighlightSectionComponent />
