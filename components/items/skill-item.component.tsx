@@ -14,6 +14,7 @@ import {
   Chip,
   Collapse,
   Button,
+  Tooltip,
 } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -37,16 +38,19 @@ export const SkillItemComponent: React.FC<Props> = ({ skill }) => {
             padding: "4px 8px !important",
           }}
         >
-          <Box
-            display="flex"
-            alignItems="center"
-            flexWrap="wrap"
-          >
+          <Box display="flex" alignItems="center" flexWrap="wrap">
             <Typography component="h3" variant="h4" pr={1}>
               {skill.title}
             </Typography>
             {skill.tags?.map((tag) => (
-              <Chip key={tag} size="small" variant="medium" color="primary" label={tag} />
+              <Tooltip key={tag} title={tag}>
+                <Chip
+                  size="small"
+                  variant="medium"
+                  color="primary"
+                  label={tag}
+                />
+              </Tooltip>
             ))}
           </Box>
         </CardContent>

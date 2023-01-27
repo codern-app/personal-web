@@ -14,6 +14,7 @@ import {
   Chip,
   Collapse,
   Button,
+  Tooltip,
 } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -28,12 +29,14 @@ export const ExperienceItemComponent: React.FC<Props> = ({ experience }) => {
 
   return (
     <Card sx={{ display: "flex", marginBottom: "10px" }} className="card">
-      <CardMedia
-        component="img"
-        sx={{ height: 64, width: 64, margin: "8px 0 0 8px" }}
-        image={experience.company.image}
-        alt={experience.company.title}
-      />
+      <Tooltip title={experience.company.title}>
+        <CardMedia
+          component="img"
+          sx={{ height: 64, width: 64, margin: "8px 0 0 8px" }}
+          image={experience.company.image}
+          alt={experience.company.title}
+        />
+      </Tooltip>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent
           sx={{
@@ -79,7 +82,9 @@ export const ExperienceItemComponent: React.FC<Props> = ({ experience }) => {
           {experience.description &&
             experience.description
               ?.split("\n")
-              ?.map((line) => <Typography key={experience.id+line}>{line}</Typography>)}
+              ?.map((line) => (
+                <Typography key={experience.id + line}>{line}</Typography>
+              ))}
         </CardContent>
       </Box>
     </Card>

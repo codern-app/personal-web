@@ -14,6 +14,7 @@ import {
   Chip,
   Collapse,
   Button,
+  Tooltip,
 } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -28,12 +29,14 @@ export const EducationItemComponent: React.FC<Props> = ({ education }) => {
 
   return (
     <Card sx={{ display: "flex", marginBottom: "10px" }} className="card">
-      <CardMedia
-        component="img"
-        sx={{ height: 64, width: 64, margin: "8px 0 0 8px" }}
-        image={education.image}
-        alt={education.university}
-      />
+      <Tooltip title={education.university}>
+        <CardMedia
+          component="img"
+          sx={{ height: 64, width: 64, margin: "8px 0 0 8px" }}
+          image={education.image}
+          alt={education.university}
+        />
+      </Tooltip>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent
           sx={{
@@ -76,9 +79,7 @@ export const EducationItemComponent: React.FC<Props> = ({ education }) => {
               />
             )}
           </Box>
-          <Typography>
-            {education.topic}
-          </Typography>
+          <Typography>{education.topic}</Typography>
         </CardContent>
       </Box>
     </Card>

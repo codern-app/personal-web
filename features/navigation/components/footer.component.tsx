@@ -1,5 +1,12 @@
 import Box from "@mui/material/Box";
-import { Button, Chip, Container, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Chip,
+  Container,
+  Grid,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { useTranslations } from "next-intl";
 import { menuConfig } from "../configs/menu.config";
 import Link from "next/link";
@@ -32,21 +39,25 @@ export const FooterComponent: React.FC = () => {
           <Typography>{profile?.description}</Typography>
           <Box display="flex">
             {profile?.email && (
-              <Chip
-                icon={<Email />}
-                label={profile?.email}
-                size="small"
-                variant="medium"
-              />
-            )}
-            {config?.siteUrl && (
-              <Box className="show-print">
+              <Tooltip title={profile?.email}>
                 <Chip
-                  icon={<Home />}
-                  label={config.siteUrl}
+                  icon={<Email />}
+                  label={profile?.email}
                   size="small"
                   variant="medium"
                 />
+              </Tooltip>
+            )}
+            {config?.siteUrl && (
+              <Box className="show-print">
+                <Tooltip title={config.siteUrl}>
+                  <Chip
+                    icon={<Home />}
+                    label={config.siteUrl}
+                    size="small"
+                    variant="medium"
+                  />
+                </Tooltip>
               </Box>
             )}
           </Box>
@@ -68,9 +79,11 @@ export const FooterComponent: React.FC = () => {
               </Typography>
               {menuConfig.footerMenu.map((menuItem) => (
                 <Box key={menuItem.link}>
-                  <Link href={menuItem.link}>
-                    <Typography>{menuItem.title}</Typography>
-                  </Link>
+                  <Tooltip title={menuItem.title}>
+                    <Link href={menuItem.link}>
+                      <Typography>{menuItem.title}</Typography>
+                    </Link>
+                  </Tooltip>
                 </Box>
               ))}
             </Grid>
@@ -80,16 +93,20 @@ export const FooterComponent: React.FC = () => {
               </Typography>
               {profile?.footer?.pageSource && (
                 <Box>
-                  <Link href={profile?.footer?.pageSource} target="_blank">
-                    <Typography>{t("pageSource")}</Typography>
-                  </Link>
+                  <Tooltip title={t("pageSource")}>
+                    <Link href={profile?.footer?.pageSource} target="_blank">
+                      <Typography>{t("pageSource")}</Typography>
+                    </Link>
+                  </Tooltip>
                 </Box>
               )}
               {profile?.footer?.googlePlay && (
                 <Box>
-                  <Link href={profile?.footer?.googlePlay} target="_blank">
-                    <Typography>{t("googlePlay")}</Typography>
-                  </Link>
+                  <Tooltip title={t("googlePlay")}>
+                    <Link href={profile?.footer?.googlePlay} target="_blank">
+                      <Typography>{t("googlePlay")}</Typography>
+                    </Link>
+                  </Tooltip>
                 </Box>
               )}
             </Grid>
@@ -99,9 +116,11 @@ export const FooterComponent: React.FC = () => {
               </Typography>
               {profile?.social?.map((menuItem) => (
                 <Box key={menuItem.link}>
-                  <Link href={menuItem.link}>
-                    <Typography>{menuItem.title}</Typography>
-                  </Link>
+                  <Tooltip title={menuItem.title}>
+                    <Link href={menuItem.link}>
+                      <Typography>{menuItem.title}</Typography>
+                    </Link>
+                  </Tooltip>
                 </Box>
               ))}
             </Grid>

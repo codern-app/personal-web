@@ -33,4 +33,14 @@ a {
   .card {
     break-inside: avoid;
   }
+
+  .profile-header {
+    flex-direction: row !important;
+  }
+  .profile-details {
+    margin-left: 8px !important;
+    display: block !important;
+    text-align: left !important;
+  }
+
 }
