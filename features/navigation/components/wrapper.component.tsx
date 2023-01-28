@@ -1,9 +1,9 @@
-import Box from "@mui/material/Box";
-import { Container } from "@mui/material";
-import { ReactNode, useState } from "react";
-import { SideMenuComponent } from "./side-menu.component";
-import { HeaderComponent } from "./header.component";
-import { FooterComponent } from "./footer.component";
+import Box from '@mui/material/Box';
+import { Container } from '@mui/material';
+import { ReactNode, useState } from 'react';
+import { SideMenuComponent } from './side-menu.component';
+import { HeaderComponent } from './header.component';
+import { FooterComponent } from './footer.component';
 
 type Props = {
   children: ReactNode;

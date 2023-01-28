@@ -5,9 +5,9 @@ const userDescription = process.env.NEXT_PUBLIC_USER_DESCRIPTION;
 const userImageUrl = process.env.NEXT_PUBLIC_USER_IMAGE_URL;
 
 export const config = {
-    siteName,
-    siteUrl,
-    userTitle,
-    userDescription,
-    userImageUrl,
-}
+  siteName,
+  siteUrl,
+  userTitle,
+  userDescription,
+  userImageUrl,
+};

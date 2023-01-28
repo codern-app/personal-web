@@ -1,23 +1,16 @@
-import Box from "@mui/material/Box";
-import {
-  Button,
-  Chip,
-  Container,
-  Grid,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import { useTranslations } from "next-intl";
-import { menuConfig } from "../configs/menu.config";
-import Link from "next/link";
-import { useFirebase } from "../../../features/firebase/providers/firebase.hook";
-import { useMemo } from "react";
-import { Email, Home } from "@mui/icons-material";
-import { config } from "../../../configs/config";
+import Box from '@mui/material/Box';
+import { Button, Chip, Container, Grid, Tooltip, Typography } from '@mui/material';
+import { useTranslations } from 'next-intl';
+import { menuConfig } from '../configs/menu.config';
+import Link from 'next/link';
+import { useFirebase } from '../../../features/firebase/providers/firebase.hook';
+import { useMemo } from 'react';
+import { Email, Home } from '@mui/icons-material';
+import { config } from '../../../configs/config';
 
 export const FooterComponent: React.FC = () => {
   const { profile, isLoading } = useFirebase();
-  const t = useTranslations("general");
+  const t = useTranslations('general');
   if (isLoading) {
     return <></>;
   }
@@ -27,7 +20,7 @@ export const FooterComponent: React.FC = () => {
       <Box
         sx={{
           flexGrow: 1,
-          backgroundColor: "secondary.main",
+          backgroundColor: 'secondary.main',
           paddingTop: 2,
           paddingBottom: 2,
         }}
@@ -40,23 +33,13 @@ export const FooterComponent: React.FC = () => {
           <Box display="flex">
             {profile?.email && (
               <Tooltip title={profile?.email}>
-                <Chip
-                  icon={<Email />}
-                  label={profile?.email}
-                  size="small"
-                  variant="medium"
-                />
+                <Chip icon={<Email />} label={profile?.email} size="small" variant="medium" />
               </Tooltip>
             )}
             {config?.siteUrl && (
               <Box className="show-print">
                 <Tooltip title={config.siteUrl}>
-                  <Chip
-                    icon={<Home />}
-                    label={config.siteUrl}
-                    size="small"
-                    variant="medium"
-                  />
+                  <Chip icon={<Home />} label={config.siteUrl} size="small" variant="medium" />
                 </Tooltip>
               </Box>
             )}
@@ -66,7 +49,7 @@ export const FooterComponent: React.FC = () => {
       <Box
         sx={{
           flexGrow: 1,
-          backgroundColor: "secondary.light",
+          backgroundColor: 'secondary.light',
           paddingTop: 2,
           paddingBottom: 12,
         }}
@@ -75,7 +58,7 @@ export const FooterComponent: React.FC = () => {
           <Grid container spacing={2} columns={3}>
             <Grid item xs={1}>
               <Typography variant="h3" component="h3">
-                {t("pages")}
+                {t('pages')}
               </Typography>
               {menuConfig.footerMenu.map((menuItem) => (
                 <Box key={menuItem.link}>
@@ -89,22 +72,22 @@ export const FooterComponent: React.FC = () => {
             </Grid>
             <Grid item xs={1}>
               <Typography variant="h3" component="h3">
-                {t("external")}
+                {t('external')}
               </Typography>
               {profile?.footer?.pageSource && (
                 <Box>
-                  <Tooltip title={t("pageSource")}>
+                  <Tooltip title={t('pageSource')}>
                     <Link href={profile?.footer?.pageSource} target="_blank">
-                      <Typography>{t("pageSource")}</Typography>
+                      <Typography>{t('pageSource')}</Typography>
                     </Link>
                   </Tooltip>
                 </Box>
               )}
               {profile?.footer?.googlePlay && (
                 <Box>
-                  <Tooltip title={t("googlePlay")}>
+                  <Tooltip title={t('googlePlay')}>
                     <Link href={profile?.footer?.googlePlay} target="_blank">
-                      <Typography>{t("googlePlay")}</Typography>
+                      <Typography>{t('googlePlay')}</Typography>
                     </Link>
                   </Tooltip>
                 </Box>
@@ -112,7 +95,7 @@ export const FooterComponent: React.FC = () => {
             </Grid>
             <Grid item xs={1}>
               <Typography variant="h3" component="h3">
-                {t("social")}
+                {t('social')}
               </Typography>
               {profile?.social?.map((menuItem) => (
                 <Box key={menuItem.link}>

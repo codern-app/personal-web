@@ -1,7 +1,7 @@
-import { JSXElementConstructor } from "react";
+import { JSXElementConstructor } from 'react';
 
 export type MenuItem = {
-    title: string;
-    link: string;
-    icon: JSXElementConstructor<any>;
-}
+  title: string;
+  link: string;
+  icon: JSXElementConstructor<any>;
+};

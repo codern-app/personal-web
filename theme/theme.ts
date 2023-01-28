@@ -1,9 +1,9 @@
-import { createTheme } from "@mui/material";
-import { amber, blueGrey, green, grey, orange, red } from "@mui/material/colors";
+import { createTheme } from '@mui/material';
+import { amber, blueGrey, green, grey, orange, red } from '@mui/material/colors';
 
 export const theme = createTheme({
   palette: {
-    mode: "light",
+    mode: 'light',
     primary: {
       main: '#c37b7c',
     },
@@ -13,34 +13,39 @@ export const theme = createTheme({
   },
   typography: {
     fontSize: 12,
-    h1: { fontSize: 24, fontWeight: "bold", lineHeight: 1.5 },
-    h2: { fontSize: 18, fontWeight: "bold", lineHeight: 1.5 },
-    h3: { fontSize: 14, fontWeight: "bold", lineHeight: 1.5 },
-    h4: { fontSize: 12, fontWeight: "bold", lineHeight: 1.5 },
+    h1: { fontSize: 24, fontWeight: 'bold', lineHeight: 1.5 },
+    h2: { fontSize: 18, fontWeight: 'bold', lineHeight: 1.5 },
+    h3: { fontSize: 14, fontWeight: 'bold', lineHeight: 1.5 },
+    h4: { fontSize: 12, fontWeight: 'bold', lineHeight: 1.5 },
     body1: { fontSize: 12 },
   },
   components: {
     MuiCard: {
       defaultProps: {
-        variant: "outlined",
+        variant: 'outlined',
       },
     },
     MuiChip: {
       variants: [
         {
-          props: { variant: "medium" },
-          style: { padding: "0 2px 0 4px", margin: "4px 8px 4px 0", height: "22px" },
+          props: { variant: 'medium' },
+          style: { padding: '0 2px 0 4px', margin: '4px 8px 4px 0', height: '22px' },
         },
         {
-          props: { variant: "small" },
-          style: { padding: "0 1px 0 2px", margin: "2px 4px 2px 0", fontSize: '10px', height: "18px" },
+          props: { variant: 'small' },
+          style: {
+            padding: '0 1px 0 2px',
+            margin: '2px 4px 2px 0',
+            fontSize: '10px',
+            height: '18px',
+          },
         },
       ],
-    }
+    },
   },
 });
 
-declare module "@mui/material/Chip" {
+declare module '@mui/material/Chip' {
   interface ChipPropsVariantOverrides {
     medium: true;
     small: true;
