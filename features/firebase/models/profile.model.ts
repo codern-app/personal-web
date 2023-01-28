@@ -1,4 +1,4 @@
-import { IconString, TagGroup } from "./firebase.model";
+import { IconString, TagGroup } from './firebase.model';
 
 export type Social = {
   id: string;

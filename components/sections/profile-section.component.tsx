@@ -1,21 +1,14 @@
-import {
-  Business,
-  DateRange,
-  Email,
-  Home,
-  Phone,
-  Print,
-} from "@mui/icons-material";
-import { Box, Avatar, Typography, Chip, Button, Tooltip } from "@mui/material";
-import { useTranslations } from "next-intl";
-import { config } from "../../configs/config";
-import { useFirebase } from "../../features/firebase/providers/firebase.hook";
-import { SectionComponent } from "../../features/navigation/components/section.component";
-import { theme } from "../../theme/theme";
-import { IconComponent } from "../shared/icon.component";
+import { Business, DateRange, Email, Home, Phone, Print } from '@mui/icons-material';
+import { Box, Avatar, Typography, Chip, Button, Tooltip } from '@mui/material';
+import { useTranslations } from 'next-intl';
+import { config } from '../../configs/config';
+import { useFirebase } from '../../features/firebase/providers/firebase.hook';
+import { SectionComponent } from '../../features/navigation/components/section.component';
+import { theme } from '../../theme/theme';
+import { IconComponent } from '../shared/icon.component';
 
 export const ProfileSectionComponent: React.FC = () => {
-  const t = useTranslations("profile");
+  const t = useTranslations('profile');
   const { profile } = useFirebase();
 
   const handlePrint = () => {
@@ -26,37 +19,33 @@ export const ProfileSectionComponent: React.FC = () => {
     <SectionComponent color="secondary.light" id="profile">
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
           paddingTop: 1,
-          [theme.breakpoints.up("md")]: {
-            flexDirection: "row",
+          [theme.breakpoints.up('md')]: {
+            flexDirection: 'row',
           },
         }}
         className="profile-header"
       >
-        <Avatar
-          alt={profile?.firstName}
-          src={profile?.image}
-          sx={{ width: 180, height: 180 }}
-        />
+        <Avatar alt={profile?.firstName} src={profile?.image} sx={{ width: 180, height: 180 }} />
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
             flex: 1,
-            [theme.breakpoints.up("md")]: {
+            [theme.breakpoints.up('md')]: {
               marginLeft: 2,
-              display: "block",
-              textAlign: "left",
+              display: 'block',
+              textAlign: 'left',
             },
           }}
           className="profile-details"
         >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Typography component="h1" variant="h1">
               {profile?.firstName} {profile?.lastName}
             </Typography>
@@ -110,9 +99,9 @@ export const ProfileSectionComponent: React.FC = () => {
             <Box className="show-print">
               <Button
                 sx={{
-                  color: "text.secondary",
+                  color: 'text.secondary',
                   paddingY: 0,
-                  textTransform: "lowercase",
+                  textTransform: 'lowercase',
                 }}
                 startIcon={<Home />}
                 href={config.siteUrl}
@@ -124,9 +113,9 @@ export const ProfileSectionComponent: React.FC = () => {
               <Button
                 key={item.id}
                 sx={{
-                  color: "text.secondary",
+                  color: 'text.secondary',
                   paddingY: 0,
-                  textTransform: "lowercase",
+                  textTransform: 'lowercase',
                 }}
                 startIcon={<IconComponent icon={item.icon} />}
                 href={item.link}
@@ -137,17 +126,17 @@ export const ProfileSectionComponent: React.FC = () => {
             ))}
           </Box>
           <Box
-            sx={{ display: "flex", justifyContent: "flex-end", marginTop: 2 }}
+            sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }}
             className="hide-print"
           >
-            <Tooltip title={t("print")}>
+            <Tooltip title={t('print')}>
               <Button
                 startIcon={<Print />}
                 color="primary"
                 variant="contained"
                 onClick={handlePrint}
               >
-                {t("print")}
+                {t('print')}
               </Button>
             </Tooltip>
           </Box>

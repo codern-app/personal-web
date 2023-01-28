@@ -1,15 +1,15 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Container, Tooltip } from "@mui/material";
-import { config } from "../../../configs/config";
-import { menuConfig } from "../configs/menu.config";
-import { useRouter } from "next/router";
-import { theme } from "../../../theme/theme";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Container, Tooltip } from '@mui/material';
+import { config } from '../../../configs/config';
+import { menuConfig } from '../configs/menu.config';
+import { useRouter } from 'next/router';
+import { theme } from '../../../theme/theme';
 
 type Props = {
   setIsSideBarOpen: (isSideBarOpen: boolean) => void;
@@ -23,7 +23,7 @@ export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
         sx={{
           flexGrow: 1,
           marginBottom: 7,
-          [theme.breakpoints.up("md")]: {
+          [theme.breakpoints.up('md')]: {
             marginBottom: 8,
           },
         }}

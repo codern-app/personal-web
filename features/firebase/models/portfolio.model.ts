@@ -1,4 +1,4 @@
-import { IconString } from "./firebase.model";
+import { IconString } from './firebase.model';
 
 export type Portfolio = {
   id: string;

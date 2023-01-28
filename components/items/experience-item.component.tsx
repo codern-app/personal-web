@@ -1,59 +1,34 @@
-import {
-  Business,
-  DateRange,
-  ExpandLess,
-  ExpandMore,
-  Place,
-} from "@mui/icons-material";
-import {
-  Card,
-  Box,
-  CardContent,
-  Typography,
-  CardMedia,
-  Chip,
-  Collapse,
-  Button,
-  Tooltip,
-} from "@mui/material";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
-import { Experience } from "../../features/firebase/models/experience.model";
+import { Business, DateRange, Place } from '@mui/icons-material';
+import { Card, Box, CardContent, Typography, CardMedia, Chip, Tooltip } from '@mui/material';
+import { Experience } from '../../features/firebase/models/experience.model';
 
 type Props = {
   experience: Experience;
 };
 
 export const ExperienceItemComponent: React.FC<Props> = ({ experience }) => {
-  const t = useTranslations("experience");
-
   return (
-    <Card sx={{ display: "flex", marginBottom: "10px" }} className="card">
+    <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
       <Tooltip title={experience.company.title}>
         <CardMedia
           component="img"
-          sx={{ height: 64, width: 64, margin: "8px 0 0 8px" }}
+          sx={{ height: 64, width: 64, margin: '8px 0 0 8px' }}
           image={experience.company.image}
           alt={experience.company.title}
         />
       </Tooltip>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent
           sx={{
-            flex: "1 0 auto",
-            padding: "4px 8px !important",
-            minHeight: "80px",
+            flex: '1 0 auto',
+            padding: '4px 8px !important',
+            minHeight: '80px',
           }}
         >
           <Typography component="h3" variant="h3">
             {experience.title}
           </Typography>
-          <Box
-            display="flex"
-            color="text.secondary"
-            alignItems="center"
-            flexWrap="wrap"
-          >
+          <Box display="flex" color="text.secondary" alignItems="center" flexWrap="wrap">
             {experience.company.title && (
               <Chip
                 icon={<Business />}
@@ -71,20 +46,13 @@ export const ExperienceItemComponent: React.FC<Props> = ({ experience }) => {
               />
             )}
             {experience.location && (
-              <Chip
-                icon={<Place />}
-                label={experience.location}
-                size="small"
-                variant="medium"
-              />
+              <Chip icon={<Place />} label={experience.location} size="small" variant="medium" />
             )}
           </Box>
           {experience.description &&
             experience.description
-              ?.split("\n")
-              ?.map((line) => (
-                <Typography key={experience.id + line}>{line}</Typography>
-              ))}
+              ?.split('\n')
+              ?.map((line) => <Typography key={experience.id + line}>{line}</Typography>)}
         </CardContent>
       </Box>
     </Card>

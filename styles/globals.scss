@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -20,16 +20,15 @@ a {
   display: none !important;
 }
 
-
 @media print {
   .hide-print {
     display: none !important;
   }
 
   .show-print {
-    display:block !important;
+    display: block !important;
   }
-  
+
   .card {
     break-inside: avoid;
   }
@@ -42,5 +41,4 @@ a {
     display: block !important;
     text-align: left !important;
   }
-
 }
