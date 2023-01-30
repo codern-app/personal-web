@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - run: npm run prettier:check
       - run: npm run lint
+      - run: npm run test
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
