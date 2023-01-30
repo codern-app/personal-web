@@ -1,10 +1,9 @@
 import Box from '@mui/material/Box';
-import { Button, Chip, Container, Grid, Tooltip, Typography } from '@mui/material';
+import { Chip, Container, Grid, Tooltip, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { menuConfig } from '../configs/menu.config';
 import Link from 'next/link';
 import { useFirebase } from '../../../features/firebase/providers/firebase.hook';
-import { useMemo } from 'react';
 import { Email, Home } from '@mui/icons-material';
 import { config } from '../../../configs/config';
 

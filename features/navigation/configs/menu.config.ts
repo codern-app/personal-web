@@ -1,12 +1,4 @@
-import {
-  Business,
-  Collections,
-  FactCheck,
-  FeaturedPlayList,
-  Home,
-  LocalLibrary,
-  School,
-} from '@mui/icons-material';
+import { Business, Collections, FactCheck, Home, LocalLibrary, School } from '@mui/icons-material';
 import { MenuItem } from '../models/menu.model';
 
 const skillMenuItem: MenuItem = {

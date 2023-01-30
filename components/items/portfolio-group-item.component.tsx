@@ -20,6 +20,7 @@ export const PortfolioGroupItemComponent: React.FC<Props> = ({ portfolioSection 
           <Typography component="h3" variant="h3">
             {portfolioSection.title}
           </Typography>
+          {portfolioSection.description && <Typography>{portfolioSection.description}</Typography>}
           <Box display="flex" flexDirection="column" sx={{ flexGrow: 1 }}>
             {portfolioSection.portfolio?.map((portfolio) => (
               <PortfolioItemComponent key={portfolio.id} portfolio={portfolio} />
