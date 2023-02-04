@@ -8,6 +8,7 @@ import { ExperienceResponse } from '../models/experience.model';
 import { ProfileResponse } from '../models/profile.model';
 import { PortfoliosResponse } from '../models/portfolio.model';
 import { HighlightsResponse } from '../models/highlight.model';
+import { RecommendationsResponse } from '../models/recommendation.model';
 
 const initialState: FirebaseState = {
   app: undefined,
@@ -17,6 +18,7 @@ const initialState: FirebaseState = {
   highlights: undefined,
   portfolios: undefined,
   profile: undefined,
+  recommendations: undefined,
   isLoading: true,
 };
 
@@ -37,7 +39,33 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
   const [experience, setExperience] = useState<ExperienceResponse>();
   const [highlights, setHighlights] = useState<HighlightsResponse>();
   const [portfolios, setPortfolios] = useState<PortfoliosResponse>();
+  const [recommendations, setRecommendations] = useState<RecommendationsResponse>();
   const [profile, setProfile] = useState<ProfileResponse>();
+
+  const state = useMemo(() => {
+    return {
+      ...initialState,
+      app,
+      analytics,
+      remoteConfig,
+      experience,
+      highlights,
+      profile,
+      portfolios,
+      recommendations,
+      isLoading,
+    };
+  }, [
+    app,
+    analytics,
+    remoteConfig,
+    experience,
+    highlights,
+    profile,
+    portfolios,
+    recommendations,
+    isLoading,
+  ]);
 
   useEffect(() => {
     if (remoteConfig) {
@@ -47,6 +75,7 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
           setHighlights(JSON.parse(getValue(remoteConfig, 'highlights').asString()));
           setPortfolios(JSON.parse(getValue(remoteConfig, 'portfolio').asString()));
           setProfile(JSON.parse(getValue(remoteConfig, 'profile').asString()));
+          setRecommendations(JSON.parse(getValue(remoteConfig, 'recommendations').asString()));
           setIsLoading(false);
         } catch (e) {
           setIsLoading(false);
@@ -55,21 +84,5 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
     }
   }, [remoteConfig]);
 
-  return (
-    <FirebaseContext.Provider
-      value={{
-        ...initialState,
-        app,
-        analytics,
-        remoteConfig,
-        experience,
-        highlights,
-        profile,
-        portfolios,
-        isLoading,
-      }}
-    >
-      {children}
-    </FirebaseContext.Provider>
-  );
+  return <FirebaseContext.Provider value={state}>{children}</FirebaseContext.Provider>;
 };

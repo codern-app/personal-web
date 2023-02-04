@@ -7,6 +7,7 @@ import { LanguagesSectionComponent } from '../components/sections/languges-secti
 import { PortfolioSectionComponent } from '../components/sections/portfolio-section.component';
 import { ProfileSectionComponent } from '../components/sections/profile-section.component';
 import { PublicationSectionComponent } from '../components/sections/publication-section.component';
+import { RecommendationSectionComponent } from '../components/sections/recommendation-section.component';
 import { SkillsSectionComponent } from '../components/sections/skills-section.component';
 import { config } from '../configs/config';
 import { useFirebase } from '../features/firebase/providers/firebase.hook';
@@ -52,6 +53,7 @@ export default function Home() {
       <SkillsSectionComponent />
       <LanguagesSectionComponent />
       <EducationSectionComponent />
+      <RecommendationSectionComponent />
       <PortfolioSectionComponent />
       <PublicationSectionComponent />
     </WrapperComponent>

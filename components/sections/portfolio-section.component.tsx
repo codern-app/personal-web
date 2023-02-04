@@ -9,7 +9,7 @@ export const PortfolioSectionComponent: React.FC = () => {
   const { portfolios } = useFirebase();
 
   return (
-    <SectionComponent color="grey.100" id="portfolio">
+    <SectionComponent color="grey.200" id="portfolio">
       <Typography variant="h2" component="h2" mt={2}>
         {t('title')}
       </Typography>
