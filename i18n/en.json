@@ -30,5 +30,8 @@
   },
   "skills": {
     "title": "Skills"
+  },
+  "recommendations": {
+    "title": "Recommendations"
   }
 }

@@ -5,6 +5,7 @@ import { ExperienceResponse } from './experience.model';
 import { HighlightsResponse } from './highlight.model';
 import { PortfoliosResponse } from './portfolio.model';
 import { ProfileResponse } from './profile.model';
+import { RecommendationsResponse } from './recommendation.model';
 
 export type FirebaseState = {
   app?: FirebaseApp;
@@ -14,6 +15,7 @@ export type FirebaseState = {
   highlights?: HighlightsResponse;
   portfolios?: PortfoliosResponse;
   profile?: ProfileResponse;
+  recommendations?: RecommendationsResponse;
   isLoading?: boolean;
 };
 
