@@ -16,35 +16,29 @@ import { StructuredDataComponent } from '../features/seo/structured-data.compone
 export default function Home() {
   const { isLoading } = useFirebase();
 
-  if (isLoading) {
-    return (
-      <>
+  return (
+    <>
+      <WrapperComponent>
         <HeadComponent />
-        <WrapperComponent>
+        {isLoading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', marginY: 20 }}>
             <CircularProgress />
           </Box>
-        </WrapperComponent>
+        ) : (
+          <>
+            <ProfileSectionComponent />
+            <HighlightSectionComponent />
+            <ExperienceSectionComponent />
+            <SkillsSectionComponent />
+            <LanguagesSectionComponent />
+            <EducationSectionComponent />
+            <RecommendationSectionComponent />
+            <PortfolioSectionComponent />
+            <PublicationSectionComponent />
+          </>
+        )}
         <StructuredDataComponent />
-      </>
-    );
-  }
-
-  return (
-    <>
-      <HeadComponent />
-      <WrapperComponent>
-        <ProfileSectionComponent />
-        <HighlightSectionComponent />
-        <ExperienceSectionComponent />
-        <SkillsSectionComponent />
-        <LanguagesSectionComponent />
-        <EducationSectionComponent />
-        <RecommendationSectionComponent />
-        <PortfolioSectionComponent />
-        <PublicationSectionComponent />
       </WrapperComponent>
-      <StructuredDataComponent />
     </>
   );
 }
