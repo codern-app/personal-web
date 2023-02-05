@@ -177,5 +177,5 @@ export const StructuredDataComponent: React.FC = () => {
     socials,
   ]);
 
-  return <script type="application/ld+json">{data}</script>;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }}></script>;
 };
