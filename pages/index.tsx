@@ -2,7 +2,7 @@ import { Box, CircularProgress } from '@mui/material';
 import { EducationSectionComponent } from '../components/sections/education-section.component';
 import { ExperienceSectionComponent } from '../components/sections/experience-section.component';
 import { HighlightSectionComponent } from '../components/sections/highlight-section.component';
-import { LanguagesSectionComponent } from '../components/sections/languges-section.component';
+import { LanguagesSectionComponent } from '../components/sections/languages-section.component';
 import { PortfolioSectionComponent } from '../components/sections/portfolio-section.component';
 import { ProfileSectionComponent } from '../components/sections/profile-section.component';
 import { PublicationSectionComponent } from '../components/sections/publication-section.component';

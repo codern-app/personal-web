@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import { LanguagesSectionComponent } from '../../../components/sections/languges-section.component';
+import { LanguagesSectionComponent } from '../../../components/sections/languages-section.component';
 
 afterEach(cleanup);
 

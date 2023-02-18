@@ -33,7 +33,12 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
     () => (typeof window !== 'undefined' ? initializeApp(firebaseConfig) : undefined),
     [],
   );
-  const remoteConfig = useMemo(() => (app ? getRemoteConfig(app) : undefined), [app]);
+  const remoteConfig = useMemo(() => {
+    if (!app) return undefined;
+    const config = getRemoteConfig(app);
+    config.settings.minimumFetchIntervalMillis = 3600000;
+    return config;
+  }, [app]);
   const analytics = useMemo(() => (app ? getAnalytics(app) : undefined), [app]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [experience, setExperience] = useState<ExperienceResponse>();

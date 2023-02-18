@@ -1,4 +1,13 @@
-import { Business, Collections, FactCheck, Home, LocalLibrary, School } from '@mui/icons-material';
+import {
+  Business,
+  Collections,
+  FactCheck,
+  Home,
+  Language,
+  LocalLibrary,
+  Recommend,
+  School,
+} from '@mui/icons-material';
 import { MenuItem } from '../models/menu.model';
 
 const skillMenuItem: MenuItem = {
@@ -11,6 +20,18 @@ const experienceMenuItem: MenuItem = {
   title: 'Experience',
   link: '#experience',
   icon: Business,
+};
+
+const languagesMenuItem: MenuItem = {
+  title: 'Languages',
+  link: '#languages',
+  icon: Language,
+};
+
+const recommendationsMenuItem: MenuItem = {
+  title: 'Recommendations',
+  link: '#recommendations',
+  icon: Recommend,
 };
 
 const homeMenuItem: MenuItem = {
@@ -40,7 +61,9 @@ const publicationsMenuItem: MenuItem = {
 const topMenu: MenuItem[] = [
   homeMenuItem,
   experienceMenuItem,
+  languagesMenuItem,
   skillMenuItem,
+  recommendationsMenuItem,
   portfolioMenuItem,
   educationMenuItem,
   publicationsMenuItem,
@@ -48,7 +71,9 @@ const topMenu: MenuItem[] = [
 const sideMenu: MenuItem[] = [
   homeMenuItem,
   experienceMenuItem,
+  languagesMenuItem,
   skillMenuItem,
+  recommendationsMenuItem,
   portfolioMenuItem,
   educationMenuItem,
   publicationsMenuItem,
@@ -56,15 +81,9 @@ const sideMenu: MenuItem[] = [
 const footerMenu: MenuItem[] = [
   homeMenuItem,
   experienceMenuItem,
+  languagesMenuItem,
   skillMenuItem,
-  portfolioMenuItem,
-  educationMenuItem,
-  publicationsMenuItem,
-];
-const footerExternal: MenuItem[] = [
-  homeMenuItem,
-  experienceMenuItem,
-  skillMenuItem,
+  recommendationsMenuItem,
   portfolioMenuItem,
   educationMenuItem,
   publicationsMenuItem,
@@ -74,5 +93,4 @@ export const menuConfig = {
   topMenu,
   sideMenu,
   footerMenu,
-  footerExternal,
 };

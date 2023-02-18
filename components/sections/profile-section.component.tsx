@@ -1,5 +1,5 @@
 import { Business, DateRange, Email, Home, Phone, Print } from '@mui/icons-material';
-import { Box, Avatar, Typography, Chip, Button, Tooltip } from '@mui/material';
+import { Box, Avatar, Typography, Chip, Button } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { config } from '../../configs/config';
 import { useFirebase } from '../../features/firebase/providers/firebase.hook';
@@ -129,16 +129,9 @@ export const ProfileSectionComponent: React.FC = () => {
             sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }}
             className="hide-print"
           >
-            <Tooltip title={t('print')}>
-              <Button
-                startIcon={<Print />}
-                color="primary"
-                variant="contained"
-                onClick={handlePrint}
-              >
-                {t('print')}
-              </Button>
-            </Tooltip>
+            <Button startIcon={<Print />} color="primary" variant="contained" onClick={handlePrint}>
+              {t('print')}
+            </Button>
           </Box>
         </Box>
       </Box>

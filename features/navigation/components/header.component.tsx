@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Container, Tooltip } from '@mui/material';
+import { Container, Tooltip, useMediaQuery } from '@mui/material';
 import { config } from '../../../configs/config';
 import { menuConfig } from '../configs/menu.config';
 import { theme } from '../../../theme/theme';
@@ -14,6 +14,7 @@ type Props = {
 };
 
 export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   return (
     <header className="hide-print">
       <Box
@@ -43,13 +44,14 @@ export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
               <Typography variant="h6" component="h1" sx={{ flexGrow: 1 }}>
                 {config.siteName}
               </Typography>
-              {menuConfig.topMenu.map((menuItem) => (
-                <Tooltip key={menuItem.title} title={menuItem.title}>
-                  <IconButton href={menuItem.link}>
-                    <menuItem.icon sx={{ marginRight: 1 }} />
-                  </IconButton>
-                </Tooltip>
-              ))}
+              {isDesktop &&
+                menuConfig.topMenu.map((menuItem) => (
+                  <Tooltip key={menuItem.title} title={menuItem.title}>
+                    <IconButton href={menuItem.link}>
+                      <menuItem.icon />
+                    </IconButton>
+                  </Tooltip>
+                ))}
             </Toolbar>
           </Container>
         </AppBar>

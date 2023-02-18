@@ -21,6 +21,9 @@ jest.mock('firebase/remote-config', () => ({
   getRemoteConfig: jest.fn(() => ({
     activate: jest.fn(),
     ensureInitialized: jest.fn(),
+    settings: {
+      minimumFetchIntervalMillis: 1000,
+    },
   })),
   getValue: jest.fn(() => ({
     asString: jest.fn(() => '{ "test": "data" }'),
