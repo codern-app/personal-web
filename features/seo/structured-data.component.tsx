@@ -57,7 +57,7 @@ export const StructuredDataComponent: React.FC = () => {
     return {
       '@type': 'PostalAddress',
       addressLocality: splitAddress[0],
-      addressCountry: splitAddress[1]?.split(' '),
+      addressCountry: splitAddress[1]?.split(' ')[0],
     };
   }, [profile]);
 
