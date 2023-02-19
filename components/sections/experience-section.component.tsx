@@ -1,18 +1,22 @@
-import { Box, Typography } from '@mui/material';
+import { Business } from '@mui/icons-material';
+import { Box } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { useFirebase } from '../../features/firebase/providers/firebase.hook';
 import { SectionComponent } from '../../features/navigation/components/section.component';
 import { ExperienceItemComponent } from '../items/experience-item.component';
+import { SectionHeaderComponent } from '../shared/section-header.component';
 
-export const ExperienceSectionComponent: React.FC = () => {
+type Props = {
+  isExpanded?: boolean;
+};
+
+export const ExperienceSectionComponent: React.FC<Props> = ({ isExpanded }) => {
   const t = useTranslations('experience');
   const { experience } = useFirebase();
 
   return (
     <SectionComponent color="grey.100" id="experience">
-      <Typography variant="h2" component="h2" mt={2}>
-        {t('title')}
-      </Typography>
+      <SectionHeaderComponent title={t('title')} icon={<Business />} isExpanded={isExpanded} />
       <Box mt={2}>
         {experience?.map((experienceItem) => (
           <ExperienceItemComponent key={experienceItem.id} experience={experienceItem} />

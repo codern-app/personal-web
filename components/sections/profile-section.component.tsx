@@ -49,11 +49,11 @@ export const ProfileSectionComponent: React.FC = () => {
             <Typography component="h1" variant="h1">
               {profile?.firstName} {profile?.lastName}
             </Typography>
-            <Typography variant="h3" color="secondary.dark" pl={1} pt={1}>
+            <Typography variant="h3" component="p" color="secondary.dark" pl={1} pt={1}>
               {profile?.nameTitle}
             </Typography>
           </Box>
-          <Typography variant="h3" color="primary.dark">
+          <Typography variant="h3" component="p" color="primary.dark">
             {profile?.title}
           </Typography>
           <Typography>{profile?.description}</Typography>
