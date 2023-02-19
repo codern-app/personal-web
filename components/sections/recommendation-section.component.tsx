@@ -1,10 +1,16 @@
-import { Box, Typography } from '@mui/material';
+import { Recommend } from '@mui/icons-material';
+import { Box } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { useFirebase } from '../../features/firebase/providers/firebase.hook';
 import { SectionComponent } from '../../features/navigation/components/section.component';
 import { RecommendationItemComponent } from '../items/recommendation-item.component';
+import { SectionHeaderComponent } from '../shared/section-header.component';
 
-export const RecommendationSectionComponent: React.FC = () => {
+type Props = {
+  isExpanded?: boolean;
+};
+
+export const RecommendationSectionComponent: React.FC<Props> = ({ isExpanded }) => {
   const t = useTranslations('recommendations');
   const { recommendations } = useFirebase();
 
@@ -14,9 +20,7 @@ export const RecommendationSectionComponent: React.FC = () => {
 
   return (
     <SectionComponent color="grey.100" id="recommendations">
-      <Typography variant="h2" component="h2" mt={2}>
-        {t('title')}
-      </Typography>
+      <SectionHeaderComponent title={t('title')} icon={<Recommend />} isExpanded={isExpanded} />
       <Box mt={2}>
         {recommendations?.recommendations?.map((recommendationItem) => (
           <RecommendationItemComponent
