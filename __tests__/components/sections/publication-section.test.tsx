@@ -5,7 +5,11 @@ import { PublicationSectionComponent } from '../../../components/sections/public
 afterEach(cleanup);
 
 jest.mock('../../../features/firebase/providers/firebase.hook', () => ({
-  useFirebase: jest.fn(() => ({})),
+  useFirebase: jest.fn(() => ({
+    profile: {
+      publications: [],
+    },
+  })),
 }));
 
 jest.mock('next-intl', () => {

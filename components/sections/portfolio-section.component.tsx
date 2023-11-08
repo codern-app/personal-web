@@ -14,6 +14,10 @@ export const PortfolioSectionComponent: React.FC<Props> = ({ isExpanded }) => {
   const t = useTranslations('portfolio');
   const { portfolios } = useFirebase();
 
+  if (!portfolios) {
+    return <></>;
+  }
+
   return (
     <SectionComponent color="grey.200" id="portfolio">
       <SectionHeaderComponent title={t('title')} icon={<Collections />} isExpanded={isExpanded} />

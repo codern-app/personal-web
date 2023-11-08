@@ -14,6 +14,10 @@ export const SkillsSectionComponent: React.FC<Props> = ({ isExpanded }) => {
   const t = useTranslations('skills');
   const { profile } = useFirebase();
 
+  if (!profile?.skills) {
+    return <></>;
+  }
+
   return (
     <SectionComponent color="grey.200" id="skills">
       <SectionHeaderComponent title={t('title')} icon={<FactCheck />} isExpanded={isExpanded} />

@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 import { EducationSectionComponent } from '../components/sections/education-section.component';
 import { ExperienceSectionComponent } from '../components/sections/experience-section.component';
 import { HighlightSectionComponent } from '../components/sections/highlight-section.component';
@@ -17,28 +17,19 @@ export default function Home() {
   const { isLoading } = useFirebase();
 
   return (
-    <>
-      <WrapperComponent>
-        <HeadComponent />
-        {isLoading ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center', marginY: 20 }}>
-            <CircularProgress />
-          </Box>
-        ) : (
-          <>
-            <ProfileSectionComponent />
-            <HighlightSectionComponent />
-            <ExperienceSectionComponent />
-            <SkillsSectionComponent />
-            <LanguagesSectionComponent />
-            <EducationSectionComponent />
-            <RecommendationSectionComponent />
-            <PortfolioSectionComponent />
-            <PublicationSectionComponent />
-          </>
-        )}
-        <StructuredDataComponent />
-      </WrapperComponent>
-    </>
+    <WrapperComponent>
+      <HeadComponent />
+      {isLoading && <LinearProgress />}
+      <ProfileSectionComponent />
+      <HighlightSectionComponent />
+      <ExperienceSectionComponent />
+      <SkillsSectionComponent />
+      <LanguagesSectionComponent />
+      <EducationSectionComponent />
+      <RecommendationSectionComponent />
+      <PortfolioSectionComponent />
+      <PublicationSectionComponent />
+      <StructuredDataComponent />
+    </WrapperComponent>
   );
 }

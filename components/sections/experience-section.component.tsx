@@ -14,6 +14,10 @@ export const ExperienceSectionComponent: React.FC<Props> = ({ isExpanded }) => {
   const t = useTranslations('experience');
   const { experience } = useFirebase();
 
+  if (!experience) {
+    return <></>;
+  }
+
   return (
     <SectionComponent color="grey.100" id="experience">
       <SectionHeaderComponent title={t('title')} icon={<Business />} isExpanded={isExpanded} />

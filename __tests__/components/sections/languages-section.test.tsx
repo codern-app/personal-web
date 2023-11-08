@@ -5,7 +5,11 @@ import { LanguagesSectionComponent } from '../../../components/sections/language
 afterEach(cleanup);
 
 jest.mock('../../../features/firebase/providers/firebase.hook', () => ({
-  useFirebase: jest.fn(() => ({})),
+  useFirebase: jest.fn(() => ({
+    profile: {
+      languages: [],
+    },
+  })),
 }));
 
 jest.mock('next-intl', () => {

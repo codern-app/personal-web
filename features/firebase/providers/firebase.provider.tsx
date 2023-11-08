@@ -9,16 +9,19 @@ import { ProfileResponse } from '../models/profile.model';
 import { PortfoliosResponse } from '../models/portfolio.model';
 import { HighlightsResponse } from '../models/highlight.model';
 import { RecommendationsResponse } from '../models/recommendation.model';
+import { config } from '../../../configs/config';
 
 const initialState: FirebaseState = {
   app: undefined,
   analytics: undefined,
   remoteConfig: undefined,
-  experience: undefined,
-  highlights: undefined,
-  portfolios: undefined,
-  profile: undefined,
-  recommendations: undefined,
+  experience: config.configExperience ? JSON.parse(config.configExperience) : undefined,
+  highlights: config.configHighlights ? JSON.parse(config.configHighlights) : undefined,
+  portfolios: config.configPortfolio ? JSON.parse(config.configPortfolio) : undefined,
+  profile: config.configProfile ? JSON.parse(config.configProfile) : undefined,
+  recommendations: config.configRecommendations
+    ? JSON.parse(config.configRecommendations)
+    : undefined,
   isLoading: true,
 };
 
@@ -40,12 +43,20 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
     return config;
   }, [app]);
   const analytics = useMemo(() => (app ? getAnalytics(app) : undefined), [app]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [experience, setExperience] = useState<ExperienceResponse>();
-  const [highlights, setHighlights] = useState<HighlightsResponse>();
-  const [portfolios, setPortfolios] = useState<PortfoliosResponse>();
-  const [recommendations, setRecommendations] = useState<RecommendationsResponse>();
-  const [profile, setProfile] = useState<ProfileResponse>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [experience, setExperience] = useState<ExperienceResponse>(
+    initialState.experience as ExperienceResponse,
+  );
+  const [highlights, setHighlights] = useState<HighlightsResponse>(
+    initialState.highlights as HighlightsResponse,
+  );
+  const [portfolios, setPortfolios] = useState<PortfoliosResponse>(
+    initialState.portfolios as PortfoliosResponse,
+  );
+  const [recommendations, setRecommendations] = useState<RecommendationsResponse>(
+    initialState.recommendations as RecommendationsResponse,
+  );
+  const [profile, setProfile] = useState<ProfileResponse>(initialState.profile as ProfileResponse);
 
   const state = useMemo(() => {
     return {
@@ -74,6 +85,7 @@ export const FirebaseProvider: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     if (remoteConfig) {
+      setIsLoading(true);
       fetchAndActivate(remoteConfig).then(() => {
         try {
           setExperience(JSON.parse(getValue(remoteConfig, 'experience').asString()));
