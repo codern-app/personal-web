@@ -14,6 +14,10 @@ export const PublicationSectionComponent: React.FC<Props> = ({ isExpanded }) => 
   const t = useTranslations('publication');
   const { profile } = useFirebase();
 
+  if (!profile?.publications) {
+    return <></>;
+  }
+
   return (
     <SectionComponent color="grey.100" id="publication">
       <SectionHeaderComponent title={t('title')} icon={<LocalLibrary />} isExpanded={isExpanded} />

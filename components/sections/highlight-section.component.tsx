@@ -5,6 +5,9 @@ import { HighlightItemComponent } from '../items/highlight-item.component';
 export const HighlightSectionComponent: React.FC = () => {
   const { highlights } = useFirebase();
 
+  if (!highlights) {
+    return <></>;
+  }
   return (
     <SectionComponent color="secondary.light" id="highlight">
       {highlights?.map((highlight) => (

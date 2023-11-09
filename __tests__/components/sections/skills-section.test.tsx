@@ -5,7 +5,11 @@ import { SkillsSectionComponent } from '../../../components/sections/skills-sect
 afterEach(cleanup);
 
 jest.mock('../../../features/firebase/providers/firebase.hook', () => ({
-  useFirebase: jest.fn(() => ({})),
+  useFirebase: jest.fn(() => ({
+    profile: {
+      skills: [],
+    },
+  })),
 }));
 
 jest.mock('next-intl', () => {

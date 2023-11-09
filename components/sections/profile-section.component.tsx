@@ -15,6 +15,10 @@ export const ProfileSectionComponent: React.FC = () => {
     window.print();
   };
 
+  if (!profile) {
+    return <></>;
+  }
+
   return (
     <SectionComponent color="secondary.light" id="profile">
       <Box

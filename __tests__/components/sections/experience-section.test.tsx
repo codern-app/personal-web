@@ -5,7 +5,9 @@ import { ExperienceSectionComponent } from '../../../components/sections/experie
 afterEach(cleanup);
 
 jest.mock('../../../features/firebase/providers/firebase.hook', () => ({
-  useFirebase: jest.fn(() => ({})),
+  useFirebase: jest.fn(() => ({
+    experience: [],
+  })),
 }));
 
 jest.mock('next-intl', () => {

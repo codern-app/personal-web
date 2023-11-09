@@ -5,7 +5,9 @@ import { PortfolioSectionComponent } from '../../../components/sections/portfoli
 afterEach(cleanup);
 
 jest.mock('../../../features/firebase/providers/firebase.hook', () => ({
-  useFirebase: jest.fn(() => ({})),
+  useFirebase: jest.fn(() => ({
+    portfolios: [],
+  })),
 }));
 
 jest.mock('next-intl', () => {
