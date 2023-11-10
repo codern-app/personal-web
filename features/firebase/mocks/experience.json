@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "title": "Software Engineer",
+    "description": "Developing web applications using Angular and React.",
+    "company": {
+      "id": "1",
+      "title": "Company 1",
+      "image": "https://via.placeholder.com/150",
+      "link": "https://www.google.com/"
+    },
+    "location": "Location 1",
+    "duration": "Duration 1"
+  }
+]

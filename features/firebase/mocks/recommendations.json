@@ -1,0 +1,30 @@
+{
+  "title": "Employee Recommendations",
+  "description": "Here are some employee recommendations for outstanding performance.",
+  "recommendations": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "title": "Software Engineer",
+      "image": "john_doe.jpg",
+      "companyName": "TechCo",
+      "recommendation": "John Doe has consistently delivered high-quality code and demonstrated exceptional problem-solving skills. A valuable asset to the team."
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "title": "Marketing Specialist",
+      "image": "jane_smith.jpg",
+      "companyName": "MarketMasters",
+      "recommendation": "Jane Smith's creativity and strategic thinking have significantly contributed to successful marketing campaigns. A true marketing expert."
+    },
+    {
+      "id": "3",
+      "name": "Bob Johnson",
+      "title": "Project Manager",
+      "image": "bob_johnson.jpg",
+      "companyName": "ProjectPro",
+      "recommendation": "Bob Johnson's leadership skills and attention to detail have played a crucial role in the successful completion of multiple projects. An excellent project manager."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "Exciting News",
+    "description": "We just launched a new product! Check it out for amazing features."
+  },
+  {
+    "id": "2",
+    "title": "Customer Testimonial",
+    "description": "Read what our customers are saying about their experience with our services."
+  },
+  {
+    "id": "3",
+    "title": "Upcoming Event",
+    "description": "Join us for an exclusive event on [date]. RSVP now!"
+  }
+]
