@@ -1,0 +1,86 @@
+{
+  "id": "1",
+  "firstName": "John",
+  "lastName": "Doe",
+  "nickName": "JD",
+  "phone": "123-456-7890",
+  "nameTitle": "Mr.",
+  "title": "Software Engineer",
+  "location": "City, Country",
+  "yearOfBirth": 1990,
+  "email": "john.doe@example.com",
+  "url": "https://www.johndoe.com",
+  "description": "Passionate software engineer with a focus on web development.",
+  "image": "https://www.johndoe.com/profile-image.jpg",
+  "social": [
+    {
+      "id": "github",
+      "title": "GitHub",
+      "icon": "github",
+      "link": "https://github.com/johndoe"
+    },
+    {
+      "id": "linkedin",
+      "title": "LinkedIn",
+      "icon": "linkedin",
+      "link": "https://www.linkedin.com/in/johndoe"
+    },
+    {
+      "id": "twitter",
+      "title": "Twitter",
+      "icon": "twitter",
+      "link": "https://twitter.com/johndoe"
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub1",
+      "title": "A Guide to Web Development",
+      "journal": "Tech Journal",
+      "date": "2022-01-01",
+      "link": "https://www.example.com/guide-to-web-dev"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu1",
+      "level": "Bachelor's Degree",
+      "university": "University of Computer Science",
+      "image": "https://www.example.com/university-logo.png",
+      "duration": "2010-2014",
+      "location": "City, Country",
+      "topic": "Computer Science"
+    }
+  ],
+  "footer": {
+    "pageSource": "https://github.com/johndoe/my-website",
+    "github": "https://github.com/johndoe",
+    "googlePlay": "https://play.google.com/store/apps/developer?id=John+Doe",
+    "medium": "https://medium.com/@johndoe",
+    "linkedin": "https://www.linkedin.com/in/johndoe"
+  },
+  "skills": [
+    {
+      "id": "skills1",
+      "title": "Web Development",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "skills2",
+      "title": "Mobile Development",
+      "tags": ["Android", "Java", "Kotlin"]
+    }
+  ],
+  "languages": [
+    {
+      "id": "lang1",
+      "title": "English",
+      "level": "Fluent"
+    },
+    {
+      "id": "lang2",
+      "title": "Spanish",
+      "level": "Intermediate"
+    }
+  ]
+}

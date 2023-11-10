@@ -1,0 +1,48 @@
+[
+  {
+    "id": "section1",
+    "title": "Web Development",
+    "description": "My web development projects",
+    "portfolio": [
+      {
+        "id": "1",
+        "title": "Personal Website",
+        "description": "My personal website showcasing my skills and projects.",
+        "link": "https://www.example.com",
+        "icon": "github",
+        "tags": ["HTML", "CSS", "JavaScript"]
+      },
+      {
+        "id": "2",
+        "title": "E-commerce Platform",
+        "description": "An online store with payment integration.",
+        "link": "https://www.examplestore.com",
+        "icon": "nodeJs",
+        "tags": ["Node.js", "Express", "MongoDB"]
+      }
+    ]
+  },
+  {
+    "id": "section2",
+    "title": "Mobile Development",
+    "description": "My mobile app projects",
+    "portfolio": [
+      {
+        "id": "3",
+        "title": "Task Manager App",
+        "description": "An app to manage daily tasks and priorities.",
+        "link": "https://www.taskmanagerapp.com",
+        "icon": "android",
+        "tags": ["Android", "Java"]
+      },
+      {
+        "id": "4",
+        "title": "Social Media App",
+        "description": "A social media app for sharing photos and updates.",
+        "link": "https://www.socialapp.com",
+        "icon": "java",
+        "tags": ["Java", "Android SDK"]
+      }
+    ]
+  }
+]
