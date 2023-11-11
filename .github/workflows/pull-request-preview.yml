@@ -1,5 +1,5 @@
 name: Pull Request Preview
-on: pull_request
+on: pull_request_target
 
 env:
   NEXT_PUBLIC_FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
