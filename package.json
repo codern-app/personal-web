@@ -37,7 +37,7 @@
     "@storybook/addon-actions": "^7.5.3",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-links": "^7.5.3",
     "@storybook/builder-webpack4": "^6.5.16",
     "@storybook/manager-webpack4": "^6.5.16",
     "@storybook/react": "^7.5.0",
