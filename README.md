@@ -25,7 +25,7 @@ Then, set the environment variables in `.env.local` file. You can use [.env.exam
 First, run the development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -33,7 +33,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Production Build
 
 ```bash
-npm run build
+yarn build
 ```
 
 ### Contributing
