@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { Portfolio } from '../../../features/firebase/models/portfolio.model';
 import { PortfolioItemComponent } from '../../../components/items/portfolio-item.component';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 afterEach(cleanup);
 
