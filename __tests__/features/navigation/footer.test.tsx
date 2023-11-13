@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { FooterComponent } from '../../../features/navigation/components/footer.component';
 
 jest.mock('next-intl', () => {

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { FirebaseProvider } from '../../../../features/firebase/providers/firebase.provider';
 
 jest.mock('firebase/app', () => ({
