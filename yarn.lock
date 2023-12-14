@@ -9482,14 +9482,14 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next-intl@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.3.1.tgz#ec8352e8687bfc9352cb89d7739f2b00e4136d82"
-  integrity sha512-/NXy0txAZihat2dkuTrrLWgQUkuJTIu7up1R+xXZbCj4mJX+1OkoRnt/BhhszqcOW6CkmfYfkAG8q7LoI5cOUw==
+next-intl@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.3.2.tgz#7660fe9929e9192d101398e47dc77f291fc64ab9"
+  integrity sha512-iIuIa6UULhClCpXGv/L05vJzAYEXbpMf1SrjSDwbtnFJP3mDjG6rBkffiEIqawfizGzUjnYf5r3GtptRL6MIBg==
   dependencies:
     "@formatjs/intl-localematcher" "^0.2.32"
     negotiator "^0.6.3"
-    use-intl "^3.3.1"
+    use-intl "^3.3.2"
 
 next-sitemap@4.2.3:
   version "4.2.3"
@@ -12060,10 +12060,10 @@ use-callback-ref@^1.3.0:
   dependencies:
     tslib "^2.0.0"
 
-use-intl@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.3.1.tgz#b250c54054f77560c796c1cb36d6956d826b767b"
-  integrity sha512-BAFmkbUvtU/9AnAM5fzc/mqz+KIsWGNJ1bJ9bxYB5UHvlxU5qTamYgPa8ZO94V7tOpAFFSskL3sPKKlknZLXlA==
+use-intl@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.3.2.tgz#2da4340493ac53315ee2c1858298efa5f6fb65d8"
+  integrity sha512-9m16djCkEbdYt6PBQH2uX+pfZFkMhowmmSqXsysdYWXP11ggKNtRMqknBM4CJTQvtNq25ajSEoZOu8ii4lr8pw==
   dependencies:
     "@formatjs/ecma402-abstract" "^1.11.4"
     intl-messageformat "^9.3.18"
