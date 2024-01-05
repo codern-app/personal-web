@@ -33,7 +33,7 @@
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@babel/core": "7.23.6",
+    "@babel/core": "7.23.7",
     "@storybook/addon-actions": "7.6.4",
     "@storybook/addon-essentials": "7.6.4",
     "@storybook/addon-interactions": "7.6.5",
