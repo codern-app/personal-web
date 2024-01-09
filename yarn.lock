@@ -2778,18 +2778,6 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@storybook/addon-actions@7.6.4":
-  version "7.6.4"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.6.4.tgz#b2d2941baa926718f0c53581c8cc8b19c2e0393b"
-  integrity sha512-91UD5KPDik74VKVioPMcbwwvDXN/non8p1wArYAHCHCmd/Pts5MJRiFueSdfomSpNjUtjtn6eSXtwpIL3XVOfQ==
-  dependencies:
-    "@storybook/core-events" "7.6.4"
-    "@storybook/global" "^5.0.0"
-    "@types/uuid" "^9.0.1"
-    dequal "^2.0.2"
-    polished "^4.2.2"
-    uuid "^9.0.0"
-
 "@storybook/addon-actions@7.6.7":
   version "7.6.7"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.6.7.tgz#2985d5417c65a9a0bce75a487b09bf1d1140b943"
@@ -3302,13 +3290,6 @@
   integrity sha512-qMZQwmvzpH5F2uwNUllTPg6eZXr2OaYZQRRN8VZJiuorZzDNdAFmiVWMWdkThwmyLEJuQKXxqCL8lMj/7PPM+g==
   dependencies:
     core-js "^3.8.2"
-
-"@storybook/core-events@7.6.4":
-  version "7.6.4"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-7.6.4.tgz#55405545dbc9ae5715654d2198ee1f1a3cc34ef7"
-  integrity sha512-i3xzcJ19ILSy4oJL5Dz9y0IlyApynn5RsGhAMIsW+mcfri+hGfeakq1stNCo0o7jW4Y3A7oluFTtIoK8DOxQdQ==
-  dependencies:
-    ts-dedent "^2.0.0"
 
 "@storybook/core-events@7.6.5":
   version "7.6.5"
