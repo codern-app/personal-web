@@ -40,7 +40,7 @@
     "@storybook/addon-links": "7.6.8",
     "@storybook/builder-webpack4": "6.5.16",
     "@storybook/manager-webpack4": "6.5.16",
-    "@storybook/react": "7.6.7",
+    "@storybook/react": "7.6.10",
     "@storybook/testing-library": "0.2.2",
     "@testing-library/jest-dom": "6.2.0",
     "@testing-library/react": "14.1.2",
