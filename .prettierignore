@@ -4,5 +4,6 @@ dist
 node_modules
 out
 public
+.yarn
 next.config.js
 *.yml
