@@ -14,7 +14,6 @@ type Props = {
 export const HeadComponent: React.FC<Props> = ({ title, description, url, imageUrl }) => {
   const router = useRouter();
   const { profile } = useFirebase();
-
   const overrideTitle = useMemo(() => {
     if (title) {
       return config.siteName + ' | ' + title;
