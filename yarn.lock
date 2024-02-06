@@ -5251,9 +5251,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:6.4.0":
-  version: 6.4.0
-  resolution: "@testing-library/jest-dom@npm:6.4.0"
+"@testing-library/jest-dom@npm:6.4.2":
+  version: 6.4.2
+  resolution: "@testing-library/jest-dom@npm:6.4.2"
   dependencies:
     "@adobe/css-tools": "npm:^4.3.2"
     "@babel/runtime": "npm:^7.9.2"
@@ -5280,7 +5280,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 6b7eba9ca388986a721fb12f84adf0f5534bf7ec5851982023a889c4a0afac6e9e91291bdac39e1f59a05adefd7727e30463d98b21c3da32fbfec229ccb11ef1
+  checksum: e7eba527b34ce30cde94424d2ec685bdfed51daaafb7df9b68b51aec6052e99a50c8bfe654612dacdf857a1eb81d68cf294fc89de558ee3a992bf7a6019fffcc
   languageName: node
   linkType: hard
 
@@ -13644,7 +13644,7 @@ __metadata:
     "@storybook/manager-webpack4": "npm:6.5.16"
     "@storybook/react": "npm:7.6.12"
     "@storybook/testing-library": "npm:0.2.2"
-    "@testing-library/jest-dom": "npm:6.4.0"
+    "@testing-library/jest-dom": "npm:6.4.2"
     "@testing-library/react": "npm:14.1.2"
     "@types/node": "npm:20.11.16"
     "@types/react": "npm:18.2.53"
