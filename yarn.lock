@@ -4173,20 +4173,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:7.6.10":
-  version: 7.6.10
-  resolution: "@storybook/addon-actions@npm:7.6.10"
-  dependencies:
-    "@storybook/core-events": "npm:7.6.10"
-    "@storybook/global": "npm:^5.0.0"
-    "@types/uuid": "npm:^9.0.1"
-    dequal: "npm:^2.0.2"
-    polished: "npm:^4.2.2"
-    uuid: "npm:^9.0.0"
-  checksum: 1b394d0be63400963fcecc0f50ef8554185d628f8c5b29f357656eaa9d6a52e40560ac8f34140fa7c7de15c13b910d7c0585a23e3e23bbf0068e94f7bcc4f382
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-actions@npm:7.6.12":
   version: 7.6.12
   resolution: "@storybook/addon-actions@npm:7.6.12"
@@ -4786,15 +4772,6 @@ __metadata:
   dependencies:
     core-js: "npm:^3.8.2"
   checksum: d7957f1df4703f4586f27281f207b0535e3003a4f5fb9c888f2c583b7101c46111bc1335c8d16861962f2be6dec7e3b5959548d5ef58965d3744085823621d59
-  languageName: node
-  linkType: hard
-
-"@storybook/core-events@npm:7.6.10":
-  version: 7.6.10
-  resolution: "@storybook/core-events@npm:7.6.10"
-  dependencies:
-    ts-dedent: "npm:^2.0.0"
-  checksum: 9432820a7742621f2eba58e4a121b9f00cf052977d059a32e4e9fe15e877b75c21b4ffd3c925138b59c18c06b3e3ef00c0e67ff3769ee3125e6423cec5a2bc91
   languageName: node
   linkType: hard
 
@@ -13636,7 +13613,7 @@ __metadata:
     "@emotion/styled": "npm:11.11.0"
     "@mui/icons-material": "npm:5.15.7"
     "@mui/material": "npm:5.15.7"
-    "@storybook/addon-actions": "npm:7.6.10"
+    "@storybook/addon-actions": "npm:7.6.12"
     "@storybook/addon-essentials": "npm:7.6.12"
     "@storybook/addon-interactions": "npm:7.6.12"
     "@storybook/addon-links": "npm:7.6.12"
