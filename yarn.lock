@@ -4300,9 +4300,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:7.6.13":
-  version: 7.6.13
-  resolution: "@storybook/addon-links@npm:7.6.13"
+"@storybook/addon-links@npm:7.6.14":
+  version: 7.6.14
+  resolution: "@storybook/addon-links@npm:7.6.14"
   dependencies:
     "@storybook/csf": "npm:^0.1.2"
     "@storybook/global": "npm:^5.0.0"
@@ -4312,7 +4312,7 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 94f9898d1f2db3e3f2735d3eb4c33e5165718d1494a61682e56bb47b613a80e6f8e37bba3f4d3bf9a83dce3d53c753a73d391c332f0bbeeeb7ec38c0b4278856
+  checksum: 0b71d34dda9d7a24bf90541b66a757a87c431ee43dc659d7a0e92acae8a9eda5025f62aab1adf3166794d3fb17d39b8078e8cb897d68937261fbb50de7341505
   languageName: node
   linkType: hard
 
@@ -13803,7 +13803,7 @@ __metadata:
     "@storybook/addon-actions": "npm:7.6.13"
     "@storybook/addon-essentials": "npm:7.6.14"
     "@storybook/addon-interactions": "npm:7.6.12"
-    "@storybook/addon-links": "npm:7.6.13"
+    "@storybook/addon-links": "npm:7.6.14"
     "@storybook/builder-webpack4": "npm:6.5.16"
     "@storybook/manager-webpack4": "npm:6.5.16"
     "@storybook/react": "npm:7.6.13"
