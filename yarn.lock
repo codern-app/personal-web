@@ -13071,17 +13071,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:3.6.0":
-  version: 3.6.0
-  resolution: "next-intl@npm:3.6.0"
+"next-intl@npm:3.7.0":
+  version: 3.7.0
+  resolution: "next-intl@npm:3.7.0"
   dependencies:
     "@formatjs/intl-localematcher": "npm:^0.2.32"
     negotiator: "npm:^0.6.3"
-    use-intl: "npm:^3.6.0"
+    use-intl: "npm:^3.7.0"
   peerDependencies:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: e7468d54e369c7d160b81f13fd2ac17fbef29652a46a9ab359f30f245b4a970d17b7614e744536ec4c2658cf687bf018b3760cdbb67e56a5f6ec562e5cc7558e
+  checksum: ac9b01d00ef57be3638690a5a5a3f9970ea34402a18ef698c140e17f241c6742b48292663e37469385caf9f212bc60695aa08f2c658d6c3938ac8c030bc44175
   languageName: node
   linkType: hard
 
@@ -13822,7 +13822,7 @@ __metadata:
     jest: "npm:29.7.0"
     jest-environment-jsdom: "npm:29.7.0"
     next: "npm:14.1.0"
-    next-intl: "npm:3.6.0"
+    next-intl: "npm:3.7.0"
     next-sitemap: "npm:4.2.3"
     prettier: "npm:3.2.4"
     react: "npm:18.2.0"
@@ -16683,15 +16683,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-intl@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "use-intl@npm:3.6.0"
+"use-intl@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "use-intl@npm:3.7.0"
   dependencies:
     "@formatjs/ecma402-abstract": "npm:^1.11.4"
     intl-messageformat: "npm:^9.3.18"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: e8d09f791dd84d2019b825a506c47e68c4a68baf3c3aa3f752fc49d81d02883ccb80f02e5ee8e9cad502ff361bcc0d509bfb5aefdf307bf84743c4b574a1c6b9
+  checksum: 2f9ee977140c5516d1e85494567103fcca048b2282a878e38ff7440fbd9eaff29de123614c6c17804a58f6de0c6713c5ca306327aa96891f09d748ecd3496821
   languageName: node
   linkType: hard
 
