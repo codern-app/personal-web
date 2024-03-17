@@ -1,4 +1,4 @@
-name: Reusable deployment workflow
+name: Reusable live deployment workflow
 
 on:
   workflow_call:
@@ -55,30 +55,18 @@ jobs:
         run: yarn install --immutable
 
       - name: Check Prettier Formatting
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: yarn prettier:check
 
       - name: Lint Code
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: yarn lint
 
       - name: Run Tests
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: yarn test
 
       - name: Build
         run: yarn build
 
-      - name: Deploy to Firebase Hosting (Preview)
-        if: github.event_name == 'pull_request'
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-          projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
-
       - name: Deploy to Firebase Hosting (Live)
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
