@@ -22,21 +22,6 @@ on:
         required: true
       FIREBASE_APP_ID:
         required: true
-    vars:
-      NEXT_PUBLIC_CONFIG_EXPERIENCE:
-        required: true
-      NEXT_PUBLIC_CONFIG_HIGHLIGHTS:
-        required: true
-      NEXT_PUBLIC_CONFIG_PORTFOLIO:
-        required: true
-      NEXT_PUBLIC_CONFIG_PROFILE:
-        required: true
-      NEXT_PUBLIC_CONFIG_RECOMMENDATIONS:
-        required: true
-      NEXT_PUBLIC_SITE_NAME:
-        required: true
-      NEXT_PUBLIC_SITE_URL:
-        required: true
 
 env:
   NEXT_PUBLIC_FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
