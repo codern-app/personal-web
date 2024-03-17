@@ -5,7 +5,7 @@ jobs:
   build_and_deploy:
     name: Build and Deploy
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    uses: ./.github/workflows/reusable-deployment.yml
+    uses: ./.github/workflows/reusable-pull-request-deployment.yml
     with:
       target-env: armanco
     secrets: inherit

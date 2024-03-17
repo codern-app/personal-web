@@ -1,0 +1,65 @@
+name: Reusable preview deployment workflow
+
+on:
+  workflow_call:
+    inputs:
+      target-env:
+        required: true
+        type: string
+    secrets:
+      FIREBASE_API_KEY:
+        required: true
+      FIREBASE_AUTH_DOMAIN:
+        required: true
+      FIREBASE_PROJECT_ID:
+        required: true
+      FIREBASE_STORAGE_BUCKET:
+        required: true
+      FIREBASE_MESSAGING_SENDER_ID:
+        required: true
+      FIREBASE_APP_ID:
+        required: true
+
+env:
+  NEXT_PUBLIC_FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
+  NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{secrets.FIREBASE_AUTH_DOMAIN}}
+  NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
+  NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{secrets.FIREBASE_STORAGE_BUCKET}}
+  NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{secrets.FIREBASE_MESSAGING_SENDER_ID}}
+  NEXT_PUBLIC_FIREBASE_APP_ID: ${{secrets.FIREBASE_APP_ID}}
+  NEXT_PUBLIC_CONFIG_EXPERIENCE: ${{vars.NEXT_PUBLIC_CONFIG_EXPERIENCE}}
+  NEXT_PUBLIC_CONFIG_HIGHLIGHTS: ${{vars.NEXT_PUBLIC_CONFIG_HIGHLIGHTS}}
+  NEXT_PUBLIC_CONFIG_PORTFOLIO: ${{vars.NEXT_PUBLIC_CONFIG_PORTFOLIO}}
+  NEXT_PUBLIC_CONFIG_PROFILE: ${{vars.NEXT_PUBLIC_CONFIG_PROFILE}}
+  NEXT_PUBLIC_CONFIG_RECOMMENDATIONS: ${{vars.NEXT_PUBLIC_CONFIG_RECOMMENDATIONS}}
+  NEXT_PUBLIC_SITE_NAME: ${{vars.NEXT_PUBLIC_SITE_NAME}}
+  NEXT_PUBLIC_SITE_URL: ${{vars.NEXT_PUBLIC_SITE_URL}}
+
+jobs:
+  build_and_preview:
+    name: Build and Preview (${{ inputs.target-env }})
+    environment:
+      name: ${{ inputs.target-env }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to Firebase Hosting (Preview)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
