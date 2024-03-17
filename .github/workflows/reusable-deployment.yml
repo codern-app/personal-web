@@ -58,22 +58,22 @@ jobs:
         run: yarn install --immutable
 
       - name: Check Prettier Formatting
-        if: ${{ inputs.is-preview != true }}
+        if: ${{ !inputs.is-preview }}
         run: yarn prettier:check
 
       - name: Lint Code
-        if: ${{ inputs.is-preview != true }}
+        if: ${{ !inputs.is-preview }}
         run: yarn lint
 
       - name: Run Tests
-        if: ${{ inputs.is-preview != true }}
+        if: ${{ !inputs.is-preview }}
         run: yarn test
 
       - name: Build
         run: yarn build
 
       - name: Deploy to Firebase Hosting (Preview)
-        if: ${{ inputs.is-preview == true }}
+        if: ${{ inputs.is-preview }}
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -81,7 +81,7 @@ jobs:
           projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
 
       - name: Deploy to Firebase Hosting (Live)
-        if: ${{ inputs.is-preview != true }}
+        if: ${{ !inputs.is-preview }}
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
