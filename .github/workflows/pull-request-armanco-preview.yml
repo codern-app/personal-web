@@ -2,11 +2,10 @@ name: Pull Request Preview
 on: pull_request_target
 
 jobs:
-  build_and_preview:
-    name: Build and Preview
+  build_and_deploy:
+    name: Build and Deploy
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     uses: ./.github/workflows/reusable-deployment.yml
     with:
       target-env: armanco
-      is-preview: true
     secrets: inherit

@@ -6,9 +6,6 @@ on:
       target-env:
         required: true
         type: string
-      is-preview:
-        required: true
-        type: boolean
     secrets:
       FIREBASE_API_KEY:
         required: true
@@ -39,8 +36,8 @@ env:
   NEXT_PUBLIC_SITE_URL: ${{vars.NEXT_PUBLIC_SITE_URL}}
 
 jobs:
-  build_and_preview:
-    name: Build and Preview
+  build_and_deploy:
+    name: Build and Deploy (${{ inputs.target-env }})
     environment:
       name: ${{ inputs.target-env }}
     runs-on: ubuntu-latest
@@ -58,22 +55,22 @@ jobs:
         run: yarn install --immutable
 
       - name: Check Prettier Formatting
-        if: ${{ !inputs.is-preview }}
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: yarn prettier:check
 
       - name: Lint Code
-        if: ${{ !inputs.is-preview }}
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: yarn lint
 
       - name: Run Tests
-        if: ${{ !inputs.is-preview }}
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: yarn test
 
       - name: Build
         run: yarn build
 
       - name: Deploy to Firebase Hosting (Preview)
-        if: ${{ inputs.is-preview }}
+        if: github.event_name == 'pull_request'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -81,7 +78,7 @@ jobs:
           projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
 
       - name: Deploy to Firebase Hosting (Live)
-        if: ${{ !inputs.is-preview }}
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
