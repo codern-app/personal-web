@@ -1,16 +1,15 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { LanguageItemComponent } from '../components/items/language-item.component';
+import { Meta, StoryObj } from '@storybook/react';
+import {
+  LanguageItemComponent,
+  LanguageItemComponentProps,
+} from '../components/items/language-item.component';
 import { Language } from '../features/firebase/models/profile.model';
 
 export default {
   title: 'Items/Language',
   component: LanguageItemComponent,
-} as ComponentMeta<typeof LanguageItemComponent>;
-
-const Template: ComponentStory<typeof LanguageItemComponent> = (args) => (
-  <LanguageItemComponent {...args} />
-);
+} as Meta<typeof LanguageItemComponent>;
 
 const defaultValue: Language = {
   id: 'test',
@@ -18,7 +17,9 @@ const defaultValue: Language = {
   level: 'C1',
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  language: defaultValue,
+export const Default: StoryObj<LanguageItemComponentProps> = {
+  args: {
+    language: defaultValue,
+  },
+  render: (args) => <LanguageItemComponent {...args} />,
 };

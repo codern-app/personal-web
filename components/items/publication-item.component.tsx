@@ -3,11 +3,13 @@ import { Card, Box, CardContent, Typography, Chip, IconButton } from '@mui/mater
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Publication } from '../../features/firebase/models/profile.model';
 
-type Props = {
+export type PublicationItemComponentProps = {
   publication: Publication;
 };
 
-export const PublicationItemComponent: React.FC<Props> = ({ publication }) => {
+export const PublicationItemComponent: React.FC<PublicationItemComponentProps> = ({
+  publication,
+}) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>

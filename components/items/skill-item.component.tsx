@@ -1,11 +1,11 @@
 import { Card, Box, CardContent, Typography, Chip, Tooltip } from '@mui/material';
 import { TagGroup } from '../../features/firebase/models/firebase.model';
 
-type Props = {
+export type SkillItemComponentProps = {
   skill: TagGroup;
 };
 
-export const SkillItemComponent: React.FC<Props> = ({ skill }) => {
+export const SkillItemComponent: React.FC<SkillItemComponentProps> = ({ skill }) => {
   return (
     <Card sx={{ display: 'flex', width: '100%', marginY: 1 }} className="card">
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>

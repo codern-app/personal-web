@@ -1,16 +1,15 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SkillItemComponent } from '../components/items/skill-item.component';
+import { Meta, StoryObj } from '@storybook/react';
+import {
+  SkillItemComponent,
+  SkillItemComponentProps,
+} from '../components/items/skill-item.component';
 import { TagGroup } from '../features/firebase/models/firebase.model';
 
 export default {
   title: 'Items/Skill',
   component: SkillItemComponent,
-} as ComponentMeta<typeof SkillItemComponent>;
-
-const Template: ComponentStory<typeof SkillItemComponent> = (args) => (
-  <SkillItemComponent {...args} />
-);
+} as Meta<typeof SkillItemComponent>;
 
 const defaultValue: TagGroup = {
   id: 'test-id',
@@ -18,7 +17,9 @@ const defaultValue: TagGroup = {
   tags: ['js', 'css'],
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  skill: defaultValue,
+export const Default: StoryObj<SkillItemComponentProps> = {
+  args: {
+    skill: defaultValue,
+  },
+  render: (args) => <SkillItemComponent {...args} />,
 };

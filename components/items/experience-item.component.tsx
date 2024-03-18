@@ -2,11 +2,11 @@ import { Business, DateRange, Place } from '@mui/icons-material';
 import { Card, Box, CardContent, Typography, CardMedia, Chip, Tooltip } from '@mui/material';
 import { Experience } from '../../features/firebase/models/experience.model';
 
-type Props = {
+export type ExperienceItemComponentProps = {
   experience: Experience;
 };
 
-export const ExperienceItemComponent: React.FC<Props> = ({ experience }) => {
+export const ExperienceItemComponent: React.FC<ExperienceItemComponentProps> = ({ experience }) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
       <Tooltip title={experience.company.title}>

@@ -1,16 +1,15 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { HighlightItemComponent } from '../components/items/highlight-item.component';
+import { Meta, StoryObj } from '@storybook/react';
+import {
+  HighlightItemComponent,
+  HighlightItemComponentProps,
+} from '../components/items/highlight-item.component';
 import { Highlight } from '../features/firebase/models/highlight.model';
 
 export default {
   title: 'Items/Highlight',
   component: HighlightItemComponent,
-} as ComponentMeta<typeof HighlightItemComponent>;
-
-const Template: ComponentStory<typeof HighlightItemComponent> = (args) => (
-  <HighlightItemComponent {...args} />
-);
+} as Meta<typeof HighlightItemComponent>;
 
 const defaultValue: Highlight = {
   id: 'high1',
@@ -18,7 +17,9 @@ const defaultValue: Highlight = {
   description: 'Won a coding competition',
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  highlight: defaultValue,
+export const Default: StoryObj<HighlightItemComponentProps> = {
+  args: {
+    highlight: defaultValue,
+  },
+  render: (args) => <HighlightItemComponent {...args} />,
 };
