@@ -2,11 +2,11 @@ import { Card, Box, CardContent, Typography, Chip, IconButton } from '@mui/mater
 import { Portfolio } from '../../features/firebase/models/portfolio.model';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-type Props = {
+export type PortfolioItemComponentProps = {
   portfolio: Portfolio;
 };
 
-export const PortfolioItemComponent: React.FC<Props> = ({ portfolio }) => {
+export const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({ portfolio }) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>

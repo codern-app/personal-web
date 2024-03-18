@@ -1,16 +1,15 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ExperienceItemComponent } from '../components/items/experience-item.component';
+import { Meta, StoryObj } from '@storybook/react';
+import {
+  ExperienceItemComponent,
+  ExperienceItemComponentProps,
+} from '../components/items/experience-item.component';
 import { Experience } from '../features/firebase/models/experience.model';
 
 export default {
   title: 'Items/Experience',
   component: ExperienceItemComponent,
-} as ComponentMeta<typeof ExperienceItemComponent>;
-
-const Template: ComponentStory<typeof ExperienceItemComponent> = (args) => (
-  <ExperienceItemComponent {...args} />
-);
+} as Meta<typeof ExperienceItemComponent>;
 
 const defaultValue: Experience = {
   id: 'exp1',
@@ -26,7 +25,9 @@ const defaultValue: Experience = {
   description: 'Developed and maintained company website\n' + 'Worked on project X and project Y',
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  experience: defaultValue,
+export const Default: StoryObj<ExperienceItemComponentProps> = {
+  args: {
+    experience: defaultValue,
+  },
+  render: (args) => <ExperienceItemComponent {...args} />,
 };

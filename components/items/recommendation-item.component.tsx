@@ -2,11 +2,13 @@ import { Business, Person } from '@mui/icons-material';
 import { Card, Box, CardContent, Typography, Chip, Tooltip, Avatar } from '@mui/material';
 import { Recommendation } from '../../features/firebase/models/recommendation.model';
 
-type Props = {
+export type RecommendationItemComponentProps = {
   recommendation: Recommendation;
 };
 
-export const RecommendationItemComponent: React.FC<Props> = ({ recommendation }) => {
+export const RecommendationItemComponent: React.FC<RecommendationItemComponentProps> = ({
+  recommendation,
+}) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
       <Tooltip title={recommendation.name}>

@@ -1,16 +1,15 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PortfolioGroupItemComponent } from '../components/items/portfolio-group-item.component';
+import { Meta, StoryObj } from '@storybook/react';
+import {
+  PortfolioGroupItemComponent,
+  PortfolioGroupItemComponentProps,
+} from '../components/items/portfolio-group-item.component';
 import { PortfolioSection } from '../features/firebase/models/portfolio.model';
 
 export default {
   title: 'Items/PortfolioGroup',
   component: PortfolioGroupItemComponent,
-} as ComponentMeta<typeof PortfolioGroupItemComponent>;
-
-const Template: ComponentStory<typeof PortfolioGroupItemComponent> = (args) => (
-  <PortfolioGroupItemComponent {...args} />
-);
+} as Meta<typeof PortfolioGroupItemComponent>;
 
 const defaultValue: PortfolioSection = {
   id: 'test',
@@ -28,7 +27,9 @@ const defaultValue: PortfolioSection = {
   ],
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  portfolioSection: defaultValue,
+export const Default: StoryObj<PortfolioGroupItemComponentProps> = {
+  args: {
+    portfolioSection: defaultValue,
+  },
+  render: (args) => <PortfolioGroupItemComponent {...args} />,
 };

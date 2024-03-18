@@ -1,16 +1,15 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PortfolioItemComponent } from '../components/items/portfolio-item.component';
+import { Meta, StoryObj } from '@storybook/react';
+import {
+  PortfolioItemComponent,
+  PortfolioItemComponentProps,
+} from '../components/items/portfolio-item.component';
 import { Portfolio } from '../features/firebase/models/portfolio.model';
 
 export default {
   title: 'Items/Portfolio',
   component: PortfolioItemComponent,
-} as ComponentMeta<typeof PortfolioItemComponent>;
-
-const Template: ComponentStory<typeof PortfolioItemComponent> = (args) => (
-  <PortfolioItemComponent {...args} />
-);
+} as Meta<typeof PortfolioItemComponent>;
 
 const defaultValue: Portfolio = {
   id: 'test-id',
@@ -21,7 +20,9 @@ const defaultValue: Portfolio = {
   tags: ['js', 'css'],
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  portfolio: defaultValue,
+export const Default: StoryObj<PortfolioItemComponentProps> = {
+  args: {
+    portfolio: defaultValue,
+  },
+  render: (args) => <PortfolioItemComponent {...args} />,
 };

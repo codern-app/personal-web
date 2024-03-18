@@ -1,16 +1,15 @@
 import React from 'react';
-import { EducationItemComponent } from '../components/items/education-item.component';
+import {
+  EducationItemComponent,
+  EducationItemComponentProps,
+} from '../components/items/education-item.component';
 import { Education } from '../features/firebase/models/profile.model';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 export default {
   title: 'Items/Education',
   component: EducationItemComponent,
-} as ComponentMeta<typeof EducationItemComponent>;
-
-const Template: ComponentStory<typeof EducationItemComponent> = (args) => (
-  <EducationItemComponent {...args} />
-);
+} as Meta<typeof EducationItemComponent>;
 
 const defaultValue: Education = {
   id: 'id',
@@ -22,7 +21,9 @@ const defaultValue: Education = {
   topic: 'Topic',
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  education: defaultValue,
+export const Default: StoryObj<EducationItemComponentProps> = {
+  args: {
+    education: defaultValue,
+  },
+  render: (args) => <EducationItemComponent {...args} />,
 };

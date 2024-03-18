@@ -2,11 +2,13 @@ import { Card, Box, CardContent, Typography } from '@mui/material';
 import { PortfolioSection } from '../../features/firebase/models/portfolio.model';
 import { PortfolioItemComponent } from './portfolio-item.component';
 
-type Props = {
+export type PortfolioGroupItemComponentProps = {
   portfolioSection: PortfolioSection;
 };
 
-export const PortfolioGroupItemComponent: React.FC<Props> = ({ portfolioSection }) => {
+export const PortfolioGroupItemComponent: React.FC<PortfolioGroupItemComponentProps> = ({
+  portfolioSection,
+}) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: '10px' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>

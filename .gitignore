@@ -40,6 +40,9 @@ next-env.d.ts
 # ide
 .idea
 
+# storybook
+storybook-static
+
 # yarn
 .pnp.*
 .yarn/*

@@ -2,11 +2,11 @@ import { Business, DateRange, Place } from '@mui/icons-material';
 import { Card, Box, CardContent, Typography, CardMedia, Chip, Tooltip } from '@mui/material';
 import { Education } from '../../features/firebase/models/profile.model';
 
-type Props = {
+export type EducationItemComponentProps = {
   education: Education;
 };
 
-export const EducationItemComponent: React.FC<Props> = ({ education }) => {
+export const EducationItemComponent: React.FC<EducationItemComponentProps> = ({ education }) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
       <Tooltip title={education.university}>

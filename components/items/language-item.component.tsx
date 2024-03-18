@@ -1,11 +1,11 @@
 import { Card, Box, Typography } from '@mui/material';
 import { Language } from '../../features/firebase/models/profile.model';
 
-type Props = {
+export type LanguageItemComponentProps = {
   language: Language;
 };
 
-export const LanguageItemComponent: React.FC<Props> = ({ language }) => {
+export const LanguageItemComponent: React.FC<LanguageItemComponentProps> = ({ language }) => {
   return (
     <Card sx={{ marginRight: 1 }}>
       <Box display="flex" p={1}>
