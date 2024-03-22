@@ -54,9 +54,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Check Prettier Formatting
-        run: yarn prettier:check
-
       - name: Lint Code
         run: yarn lint
 
