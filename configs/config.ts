@@ -5,6 +5,7 @@ const configHighlights = process.env.NEXT_PUBLIC_CONFIG_HIGHLIGHTS;
 const configPortfolio = process.env.NEXT_PUBLIC_CONFIG_PORTFOLIO;
 const configProfile = process.env.NEXT_PUBLIC_CONFIG_PROFILE;
 const configRecommendations = process.env.NEXT_PUBLIC_CONFIG_RECOMMENDATIONS;
+const configTheme = process.env.NEXT_PUBLIC_THEME;
 
 export const config = {
   siteName,
@@ -14,4 +15,5 @@ export const config = {
   configPortfolio,
   configProfile,
   configRecommendations,
+  configTheme
 };
