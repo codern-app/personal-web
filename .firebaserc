@@ -16,6 +16,20 @@
           "armanco-storybook"
         ]
       }
+    },
+    "zaraco-next-firebase": {
+      "hosting": {
+        "web": [
+          "zaraco-next-firebase"
+        ]
+      }
+    },
+    "zaraco-storybook": {
+      "hosting": {
+        "storybook": [
+          "zaraco-storybook"
+        ]
+      }
     }
   },
   "etags": {}
