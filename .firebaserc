@@ -6,7 +6,7 @@
     "arman-co-com": {
       "hosting": {
         "storybook": [
-          "armanco-storybook"
+          "arman-co-com"
         ],
         "web": [
           "arman-co-com"
@@ -16,7 +16,7 @@
     "zaraco-next-firebase": {
       "hosting": {
         "storybook": [
-          "zaraco-storybook"
+          "zaraco-next-firebase"
         ],
         "web": [
           "zaraco-next-firebase"
