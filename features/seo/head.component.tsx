@@ -25,8 +25,8 @@ export const HeadComponent: React.FC<Props> = ({ title, description, url, imageU
   }, [title, profile?.title]);
 
   const overrideUrl = useMemo(() => {
-    return url || router.basePath + router.pathname;
-  }, [url, router.basePath, router.pathname]);
+    return url || config.siteUrl + router.pathname;
+  }, [url, router.pathname]);
 
   const overrideDescription = useMemo(() => {
     return description || profile?.description;
