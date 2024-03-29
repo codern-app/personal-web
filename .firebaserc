@@ -1,5 +1,28 @@
 {
   "projects": {
     "default": "arman-co-com"
-  }
+  },
+  "targets": {
+    "arman-co-com": {
+      "hosting": {
+        "storybook": [
+          "armanco-storybook"
+        ],
+        "web": [
+          "arman-co-com"
+        ]
+      }
+    },
+    "zaraco-next-firebase": {
+      "hosting": {
+        "storybook": [
+          "zaraco-storybook"
+        ],
+        "web": [
+          "zaraco-next-firebase"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
