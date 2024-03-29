@@ -7,14 +7,14 @@
       "hosting": {
         "web": [
           "arman-co-com"
-        ],
+        ]
       }
     },
     "armanco-storybook": {
       "hosting": {
         "storybook": [
           "armanco-storybook"
-        ],
+        ]
       }
     }
   },
