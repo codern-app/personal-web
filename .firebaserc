@@ -5,21 +5,11 @@
   "targets": {
     "arman-co-com": {
       "hosting": {
-        "storybook": [
-          "storybook-static"
-        ],
         "web": [
-          "out"
-        ]
-      }
-    },
-    "zaraco-next-firebase": {
-      "hosting": {
-        "storybook": [
-          "storybook-static"
+          "arman-co-com"
         ],
-        "web": [
-          "out"
+        "storybook": [
+          "armanco-storybook"
         ]
       }
     }
