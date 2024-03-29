@@ -13,6 +13,8 @@ on:
         required: true
       FIREBASE_PROJECT_ID:
         required: true
+      FIREBASE_PROJECT_ID_STORYBOOK:
+        required: true
       FIREBASE_STORAGE_BUCKET:
         required: true
       FIREBASE_MESSAGING_SENDER_ID:
