@@ -73,10 +73,10 @@ jobs:
           projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
           target: 'web'
 
-      - name: Build
+      - name: Build Storybook
         run: yarn build-storybook
 
-      - name: Deploy to Firebase Hosting (Preview)
+      - name: Deploy Storybook to Firebase Hosting (Live)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
