@@ -3,6 +3,8 @@
     {
       "target": "web",
       "public": "out",
+      "trailingSlash": true,
+      "cleanUrls": true,
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -11,7 +13,7 @@
       "rewrites": [
         {
           "source": "**",
-          "destination": "/index.html"
+          "destination": "/404.html"
         }
       ]
     },
