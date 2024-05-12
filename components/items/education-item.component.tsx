@@ -8,7 +8,7 @@ export type EducationItemComponentProps = {
 
 export const EducationItemComponent: React.FC<EducationItemComponentProps> = ({ education }) => {
   return (
-    <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
+    <Card sx={{ display: 'flex', marginBottom: 0.5 }} className="card">
       <Tooltip title={education.university}>
         <CardMedia
           component="img"

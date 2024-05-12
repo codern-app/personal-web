@@ -22,7 +22,7 @@ export const SectionHeaderComponent: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <Stack direction="row" alignItems="center" mt={2} justifyContent="space-between">
+      <Stack direction="row" alignItems="center" mt={1} justifyContent="space-between">
         <Stack direction="row" alignItems="center">
           {icon}
           <Typography variant={variant} ml={1}>

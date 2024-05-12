@@ -8,7 +8,7 @@ export type ExperienceItemComponentProps = {
 
 export const ExperienceItemComponent: React.FC<ExperienceItemComponentProps> = ({ experience }) => {
   return (
-    <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
+    <Card sx={{ display: 'flex', marginBottom: 0.5 }} className="card">
       <Tooltip title={experience.company.title}>
         <CardMedia
           component="img"

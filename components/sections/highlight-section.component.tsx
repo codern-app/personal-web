@@ -1,6 +1,7 @@
 import { useFirebase } from '../../features/firebase/providers/firebase.hook';
 import { SectionComponent } from '../../features/navigation/components/section.component';
 import { HighlightItemComponent } from '../items/highlight-item.component';
+import { Stack } from '@mui/material';
 
 export const HighlightSectionComponent: React.FC = () => {
   const { highlights } = useFirebase();
@@ -10,9 +11,11 @@ export const HighlightSectionComponent: React.FC = () => {
   }
   return (
     <SectionComponent color="secondary.light" id="highlight">
-      {highlights?.map((highlight) => (
-        <HighlightItemComponent key={highlight.id} highlight={highlight} />
-      ))}
+      <Stack direction="column" gap={1}>
+        {highlights?.map((highlight) => (
+          <HighlightItemComponent key={highlight.id} highlight={highlight} />
+        ))}
+      </Stack>
     </SectionComponent>
   );
 };

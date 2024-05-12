@@ -22,7 +22,7 @@ export const PortfolioSectionComponent: React.FC<Props> = ({ isExpanded }) => {
     <SectionComponent color="grey.200" id="portfolio">
       <SectionHeaderComponent title={t('title')} icon={<Collections />} isExpanded={isExpanded} />
 
-      <Box mt={2}>
+      <Box mt={1}>
         {portfolios?.map((portfolio) => (
           <PortfolioGroupItemComponent key={portfolio.id} portfolioSection={portfolio} />
         ))}
