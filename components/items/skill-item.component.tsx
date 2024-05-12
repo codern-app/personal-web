@@ -7,7 +7,7 @@ export type SkillItemComponentProps = {
 
 export const SkillItemComponent: React.FC<SkillItemComponentProps> = ({ skill }) => {
   return (
-    <Card sx={{ display: 'flex', width: '100%', marginY: 1 }} className="card">
+    <Card sx={{ display: 'flex', width: '100%', marginBottom: 0.5 }} className="card">
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent
           sx={{

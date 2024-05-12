@@ -29,6 +29,7 @@ export type Footer = {
   pageSource: string;
   github: string;
   googlePlay: string;
+  storybook: string;
   medium: string;
   linkedin: string;
 };

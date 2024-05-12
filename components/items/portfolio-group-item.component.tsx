@@ -1,6 +1,7 @@
-import { Card, Box, CardContent, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { PortfolioSection } from '../../features/firebase/models/portfolio.model';
 import { PortfolioItemComponent } from './portfolio-item.component';
+import { theme } from '../../theme/theme';
 
 export type PortfolioGroupItemComponentProps = {
   portfolioSection: PortfolioSection;
@@ -10,26 +11,27 @@ export const PortfolioGroupItemComponent: React.FC<PortfolioGroupItemComponentPr
   portfolioSection,
 }) => {
   return (
-    <Card sx={{ display: 'flex', marginBottom: '10px' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-        <CardContent
-          sx={{
-            flex: '1 0 auto',
-            padding: '8px !important',
-            width: '100%',
-          }}
-        >
-          <Typography component="h3" variant="h3">
-            {portfolioSection.title}
-          </Typography>
-          {portfolioSection.description && <Typography>{portfolioSection.description}</Typography>}
-          <Box display="flex" flexDirection="column" sx={{ flexGrow: 1 }}>
-            {portfolioSection.portfolio?.map((portfolio) => (
-              <PortfolioItemComponent key={portfolio.id} portfolio={portfolio} />
-            ))}
-          </Box>
-        </CardContent>
+    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+      <Typography component="h3" variant="h3" my={1}>
+        {portfolioSection.title}
+      </Typography>
+      {portfolioSection.description && <Typography>{portfolioSection.description}</Typography>}
+      <Box
+        sx={{
+          columnCount: 1,
+          columnGap: 1,
+          [theme.breakpoints.up('md')]: {
+            columnCount: 2,
+          },
+          '@media print': {
+            columnCount: 2,
+          },
+        }}
+      >
+        {portfolioSection.portfolio?.map((portfolio) => (
+          <PortfolioItemComponent key={portfolio.id} portfolio={portfolio} />
+        ))}
       </Box>
-    </Card>
+    </Box>
   );
 };

@@ -22,7 +22,7 @@ export const LanguagesSectionComponent: React.FC<Props> = ({ isExpanded }) => {
     <SectionComponent color="grey.100" id="languages">
       <SectionHeaderComponent title={t('title')} icon={<Language />} isExpanded={isExpanded} />
 
-      <Box mt={2} mb={2} display="flex" flexWrap="wrap">
+      <Box mt={1} display="flex" flexWrap="wrap">
         {profile?.languages?.map((language) => (
           <LanguageItemComponent key={language.id} language={language} />
         ))}

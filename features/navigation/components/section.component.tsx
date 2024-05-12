@@ -14,7 +14,8 @@ export const SectionComponent: React.FC<Props> = ({ children, color, id }) => {
         sx={{
           flexGrow: 1,
           backgroundColor: color,
-          paddingY: 1,
+          paddingTop: 1,
+          paddingBottom: 2,
         }}
       >
         <Container>{children}</Container>

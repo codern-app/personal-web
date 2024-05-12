@@ -7,7 +7,7 @@ export type HighlightItemComponentProps = {
 
 export const HighlightItemComponent: React.FC<HighlightItemComponentProps> = ({ highlight }) => {
   return (
-    <Box sx={{ marginTop: 2, marginBottom: 2 }}>
+    <Box>
       <Typography component="h2" variant="h3">
         {highlight.title}
       </Typography>

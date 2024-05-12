@@ -21,7 +21,7 @@ export const ExperienceSectionComponent: React.FC<Props> = ({ isExpanded }) => {
   return (
     <SectionComponent color="grey.100" id="experience">
       <SectionHeaderComponent title={t('title')} icon={<Business />} isExpanded={isExpanded} />
-      <Box mt={2}>
+      <Box mt={1}>
         {experience?.map((experienceItem) => (
           <ExperienceItemComponent key={experienceItem.id} experience={experienceItem} />
         ))}

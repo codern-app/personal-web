@@ -11,7 +11,7 @@ export const PublicationItemComponent: React.FC<PublicationItemComponentProps> =
   publication,
 }) => {
   return (
-    <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
+    <Card sx={{ display: 'flex', marginBottom: 0.5 }} className="card">
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent
           sx={{

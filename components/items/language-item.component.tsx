@@ -7,7 +7,7 @@ export type LanguageItemComponentProps = {
 
 export const LanguageItemComponent: React.FC<LanguageItemComponentProps> = ({ language }) => {
   return (
-    <Card sx={{ marginRight: 1 }}>
+    <Card sx={{ marginRight: 0.5 }}>
       <Box display="flex" p={1}>
         <Typography pr={1}>{language.title}</Typography>
         <Typography color="text.secondary">{language.level}</Typography>

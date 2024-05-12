@@ -21,7 +21,7 @@ export const RecommendationSectionComponent: React.FC<Props> = ({ isExpanded }) 
   return (
     <SectionComponent color="grey.100" id="recommendations">
       <SectionHeaderComponent title={t('title')} icon={<Recommend />} isExpanded={isExpanded} />
-      <Box mt={2}>
+      <Box mt={1}>
         {recommendations?.recommendations?.map((recommendationItem) => (
           <RecommendationItemComponent
             key={recommendationItem.id}

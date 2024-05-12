@@ -10,7 +10,7 @@ export const RecommendationItemComponent: React.FC<RecommendationItemComponentPr
   recommendation,
 }) => {
   return (
-    <Card sx={{ display: 'flex', marginBottom: '10px' }} className="card">
+    <Card sx={{ display: 'flex', marginBottom: 0.5 }} className="card">
       <Tooltip title={recommendation.name}>
         <Avatar
           sx={{ height: 64, width: 64, margin: '8px 0 0 8px' }}

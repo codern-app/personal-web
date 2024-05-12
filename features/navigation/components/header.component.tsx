@@ -8,6 +8,8 @@ import { Container, Tooltip, useMediaQuery } from '@mui/material';
 import { config } from '../../../configs/config';
 import { menuConfig } from '../configs/menu.config';
 import { theme } from '../../../theme/theme';
+import { IconComponent } from '../../../components/shared/icon.component';
+import { useFirebase } from '../../firebase/providers/firebase.hook';
 
 type Props = {
   setIsSideBarOpen: (isSideBarOpen: boolean) => void;
@@ -15,6 +17,8 @@ type Props = {
 
 export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const { profile } = useFirebase();
+
   return (
     <header className="hide-print">
       <Box
@@ -44,14 +48,24 @@ export const HeaderComponent: React.FC<Props> = ({ setIsSideBarOpen }) => {
               <Typography variant="h6" component="h1" sx={{ flexGrow: 1 }}>
                 {config.siteName}
               </Typography>
-              {isDesktop &&
-                menuConfig.topMenu.map((menuItem) => (
-                  <Tooltip key={menuItem.title} title={menuItem.title}>
-                    <IconButton href={menuItem.link}>
-                      <menuItem.icon />
-                    </IconButton>
-                  </Tooltip>
-                ))}
+              {isDesktop && (
+                <>
+                  {menuConfig.topMenu.map((menuItem) => (
+                    <Tooltip key={menuItem.title} title={menuItem.title}>
+                      <IconButton href={menuItem.link}>
+                        <menuItem.icon />
+                      </IconButton>
+                    </Tooltip>
+                  ))}
+                  {profile?.social?.map((item) => (
+                    <Tooltip key={item.id} title={item.title}>
+                      <IconButton href={item.link} target="_blank">
+                        <IconComponent icon={item.icon} />
+                      </IconButton>
+                    </Tooltip>
+                  ))}
+                </>
+              )}
             </Toolbar>
           </Container>
         </AppBar>
